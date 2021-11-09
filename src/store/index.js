@@ -27,6 +27,7 @@ export default new Vuex.Store({
                 console.log("res:",res)
                 commit("setAuthData", res.data);
                 localStorage.setItem('authData',JSON.stringify(res.data))
+                localStorage.setItem('isAuthenticated', true)
             });
             // console.log(commit,payload)
             // axios.get('/').then(res=>{

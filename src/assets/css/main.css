@@ -1,0 +1,35 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.app-header {
+  opacity: 0.3;
+  background-color: white !important;
+  z-index: 9999 !important;
+}
+.homeVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+}
+
+.home-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  z-index: 5;
+  height: 100vh;
+  /* background-color: black; */
+}
+.home-section-container {
+  margin: 0 auto !important;
+  position: absolute;
+}
+.nav-link {
+  text-decoration: none;
+  color: black !important;
+}
