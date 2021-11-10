@@ -1,7 +1,5 @@
 <template>
-  <v-container>
-  
-  </v-container>
+  <v-container> </v-container>
 </template>
 
 <script>
@@ -13,7 +11,7 @@ export default {
     //   email: "owner@owner.com",
     //   password: "password",
     // });
-    console.log(this.$store.state.authData)
+    console.log(this.$store.state.authData);
   },
 };
 </script>

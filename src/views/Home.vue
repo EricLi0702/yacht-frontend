@@ -12,8 +12,8 @@
     <section class="home-section">
       <v-row>
         <v-col class="float-right">
-            <v-spacer></v-spacer>
-            <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
           <v-img
             max-height="400"
             max-width="450"
