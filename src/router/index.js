@@ -33,15 +33,15 @@ export const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
-    console.log(to.name, isAuthenticated)
-    next()
-//   if (to.name !== "home" && !isAuthenticated) {
-//     console.log("Not Authenticated. Redirects to login");
-//     next({ name: "login" });
-//   } else {
-//     localStorage.setItem("page", to.name);
-//     next();
-//   }
+  console.log(to.name, isAuthenticated);
+  next();
+  //   if (to.name !== "home" && !isAuthenticated) {
+  //     console.log("Not Authenticated. Redirects to login");
+  //     next({ name: "login" });
+  //   } else {
+  //     localStorage.setItem("page", to.name);
+  //     next();
+  //   }
 });
 
 export default router;
