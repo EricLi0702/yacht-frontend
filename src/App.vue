@@ -21,6 +21,8 @@
           >Contact Us</router-link
         >
         <v-spacer></v-spacer>
+        <router-link :to="{ path: 'login' }" class="mr-5 nav-link">Log In</router-link>
+        <router-link :to="{ path: 'register' }" class="mr-5 nav-link">Register</router-link>
       </v-row>
     </v-app-bar>
 

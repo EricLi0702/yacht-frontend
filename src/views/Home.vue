@@ -5,10 +5,26 @@
         <source :src="videoLink" type="video/mp4" />
         Your browser does not support HTML video.
       </video>
-      <div class="home-section-container">
+      <!-- <div class="home-section-container">
         <h1>ARE YOU INTERESTED?</h1>
-      </div>
+      </div> -->
     </section>
+<<<<<<< HEAD
+    <v-container>
+      <section class="home-section d-flex">
+        <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+        <v-img
+          max-height="400"
+          max-width="450"
+          src="../assets/image/Rectangle 12.png"
+        ></v-img>
+        <v-spacer></v-spacer>
+        <div class="w-30 p-5">
+          <h2 class="">ABOUT US</h2>
+          <p class="">
+=======
     <section class="home-section">
       <v-row>
         <v-col class="float-right">
@@ -24,6 +40,7 @@
         <v-col>
           <h2>About Us</h2>
           <p>
+>>>>>>> 7c40c7ec101d17da2520afb6c3b183cb5ebc6f4e
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
@@ -33,10 +50,11 @@
             been the industry's standard dummy text ever since the 1500s, when
             an unknown printer took a galley of type and scrambled
           </p>
-          <v-spacer></v-spacer>
-        </v-col>
-      </v-row>
-    </section>
+        </div>
+        <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+      </section>
+    </v-container>
   </div>
 </template>
 
