@@ -6,7 +6,7 @@
     data-aos="fade-up"
     data-aos-easing="linear"
   >
-    <v-btn fab dark color="#7A8981">
+    <v-btn fab dark color="#ffd400">
       <v-icon>mdi-navigation</v-icon>
     </v-btn>
   </a>
