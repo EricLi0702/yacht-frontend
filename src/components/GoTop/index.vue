@@ -16,27 +16,13 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 export default {
-  data: () => ({
-    windowTop: 0,
-    show: false,
-  }),
+  props: {
+    show: Boolean,
+    // eslint-disable-next-line vue/require-prop-type-constructor
+    require: true,
+  },
   mounted() {
     AOS.init();
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
-  methods: {
-    onScroll() {
-      this.windowTop =
-        window.top.scrollY; /* or: e.target.documentElement.scrollTop */
-      if (this.windowTop > 800) {
-        this.show = true;
-      } else {
-        this.show = false;
-      }
-    },
   },
 };
 </script>
