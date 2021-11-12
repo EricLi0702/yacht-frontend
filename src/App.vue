@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header />
+    <Header :appBarColor="appBarColor"/>
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -24,6 +24,7 @@ export default {
   data: () => ({
     windowTop: 0,
     showGoTop: false,
+    appBarColor: 'transparent',
   }),
   mounted() {
     window.addEventListener("scroll", this.onScroll);
@@ -36,6 +37,11 @@ export default {
     onScroll() {
       this.windowTop =
         window.top.scrollY; /* or: e.target.documentElement.scrollTop */
+      if (this.windowTop > 100){
+        this.appBarColor = "white";
+      }else {
+        this.appBarColor = "transparent"  
+      }
       if (this.windowTop > 800) {
         this.showGoTop = true;
       } else {

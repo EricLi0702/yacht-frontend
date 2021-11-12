@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app class="app-header" elevation="0" color="transparent">
+  <v-app-bar app class="app-header" elevation="0" :color="appBarColor">
     <v-row>
       <router-link :to="{ path: `/` }">
         <p class="text-h4 text--white">Logo</p>
@@ -34,7 +34,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    appBarColor: String,
+  },
+  methods: {
+  
+  },
+};
 </script>
 
 <style></style>
