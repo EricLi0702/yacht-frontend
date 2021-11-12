@@ -118,15 +118,15 @@
         </p>
       </v-row>
       <v-row>
-        <v-col cols="12" md="6" class="pa-md-3 pa-2">
+        <v-col v-for="(yacht, index) in yachtList" :key="index" cols="12" md="6" class="pa-md-3 pa-2">
           <div class="w-100 h-100">
             <v-hover v-slot="{ hover }">
               <v-card :elevation="hover ? 3 : 0" :class="{ 'on-hover': hover }">
-                <v-img src="../assets/image/home/yacht1.png">
+                <v-img :src="yacht.img">
                   <div class="position-relative h-100 w-100 d-flex align-end">
                     <div class="px-md-5 px-2 pb-5 white--text">
                       <p class="text-h5 font-weight-bold text-left">
-                        Speed Boat 10
+                        {{yacht.name}}
                       </p>
                       <div class="d-flex align-end">
                         <v-icon color="white" class="pr-3"
@@ -136,7 +136,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          100 Meter
+                          {{yacht.length}} Meter
                         </p>
                       </div>
                       <div class="d-flex align-end py-3">
@@ -145,7 +145,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          160$
+                          {{yacht.pricePerWeek}}$
                         </p>
                       </div>
                       <div class="d-flex align-end">
@@ -156,7 +156,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          10-Oct-2016
+                          {{yacht.builtDate}}
                         </p>
                       </div>
                     </div>
@@ -182,30 +182,6 @@
             </v-hover>
           </div>
         </v-col>
-        <v-col cols="12" md="6" class="pa-md-3 pa-2">
-          <div class="w-100 h-100">
-            <v-img
-              class="w-100 h-100"
-              src="../assets/image/home/yacht1.png"
-            ></v-img>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="pa-md-3 pa-2">
-          <div class="w-100 h-100">
-            <v-img
-              class="w-100 h-100"
-              src="../assets/image/home/yacht1.png"
-            ></v-img>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="pa-md-3 pa-2">
-          <div class="w-100 h-100">
-            <v-img
-              class="w-100 h-100"
-              src="../assets/image/home/yacht1.png"
-            ></v-img>
-          </div>
-        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -217,6 +193,37 @@ export default {
     //
     videoLink: "https://www.w3schools.com/html/mov_bbb.mp4",
     //   "https://player.vimeo.com/external/371636513.hd.mp4?s=a9084205a4de3a96b1af1cda3dc986f4f686963b&profile_id=175",
+
+    yachtList: [
+      {
+        name: 'Speed Boat 10',
+        img: require('../assets/image/home/yacht1.png'),
+        length: 320,
+        pricePerWeek: 150,
+        builtDate: '10-Oct-2016',
+      },
+      {
+        name: 'Princess 18',
+        img: require('../assets/image/home/yacht2.png'),
+        length: 240,
+        pricePerWeek: 1000,
+        builtDate: '21-Sep-2021',
+      },
+      {
+        name: 'Hercules 07',
+        img: require('../assets/image/home/yacht3.png'),
+        length: 450,
+        pricePerWeek: 700,
+        builtDate: '03-Jan-2019',
+      },
+      {
+        name: 'Speed Boat 10',
+        img: require('../assets/image/home/yacht4.png'),
+        length: 290,
+        pricePerWeek: 380,
+        builtDate: '21-May-2020',
+      },
+    ]
   }),
   mounted() {
     console.log("imported home page");
