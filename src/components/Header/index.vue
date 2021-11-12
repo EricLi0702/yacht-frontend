@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <router-link :to="{ path: `/` }" class="text-decoration-none">
-          <p class="text-h4 white--text">Logo</p>
+          <p class="text-h4 white--text mb-0">Logo</p>
         </router-link>
         <v-spacer></v-spacer>
         <div class="align-center d-flex justify-end">
