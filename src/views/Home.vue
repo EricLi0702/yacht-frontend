@@ -6,7 +6,7 @@
         Your browser does not support HTML video.
       </video>
       <div class="flex-grow-1"></div>
-      <div class="flex-grow-1">
+      <div class="flex-grow-1 d-flex flex-column justify-center">
         <v-container>
           <v-row>
             <v-col cols="12" md="6">
@@ -44,7 +44,7 @@
           </v-row>
         </v-container>
       </div>
-      <div class="flex-grow-1">
+      <div class="flex-grow-1 d-flex flex-column justify-end">
         <div class="d-flex">
           <div class="banner-slider-img-con position-relative">
             <img
