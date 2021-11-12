@@ -45,9 +45,29 @@
         </v-container>
       </div>
       <div class="flex-grow-1">
-        <img src="../assets/image/home/banner-slider-img-1.png" alt="">
-        <img src="../assets/image/home/banner-slider-img-2.png" alt="">
-        <img src="../assets/image/home/banner-slider-img-3.png" alt="">
+        <div class="d-flex">
+          <div>
+            <img
+              src="../assets/image/home/banner-slider-img-1.png"
+              alt=""
+              class="banner-slider-img"
+            />
+          </div>
+          <div>
+            <img
+              src="../assets/image/home/banner-slider-img-2.png"
+              alt=""
+              class="banner-slider-img"
+            />
+          </div>
+          <div>
+            <img
+              src="../assets/image/home/banner-slider-img-3.png"
+              alt=""
+              class="banner-slider-img"
+            />
+          </div>
+        </div>
       </div>
     </section>
     <v-container>
