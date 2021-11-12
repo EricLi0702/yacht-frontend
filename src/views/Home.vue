@@ -53,7 +53,9 @@
               class="banner-slider-img"
             />
             <v-btn fab icon class="position-absolute self-align-justify-center">
-              <v-icon color="yellow accent-4" size="40">mdi-play-circle-outline</v-icon>
+              <v-icon color="yellow accent-4" size="40"
+                >mdi-play-circle-outline</v-icon
+              >
             </v-btn>
           </div>
           <div class="banner-slider-img-con position-relative">
@@ -63,7 +65,9 @@
               class="banner-slider-img"
             />
             <v-btn fab icon class="position-absolute self-align-justify-center">
-              <v-icon color="yellow accent-4" size="40">mdi-play-circle-outline</v-icon>
+              <v-icon color="yellow accent-4" size="40"
+                >mdi-play-circle-outline</v-icon
+              >
             </v-btn>
           </div>
           <div class="banner-slider-img-con position-relative">
@@ -73,13 +77,15 @@
               class="banner-slider-img"
             />
             <v-btn fab icon class="position-absolute self-align-justify-center">
-              <v-icon color="yellow accent-4" size="40">mdi-play-circle-outline</v-icon>
+              <v-icon color="yellow accent-4" size="40"
+                >mdi-play-circle-outline</v-icon
+              >
             </v-btn>
           </div>
         </div>
       </div>
     </section>
-    <v-container class=" py-md-16 py-5">
+    <v-container class="py-md-16 py-5">
       <v-row>
         <v-col cols="12" md="6" class="pa-md-10">
           <v-img
@@ -87,18 +93,21 @@
             src="../assets/image/Rectangle 12.png"
           ></v-img>
         </v-col>
-        <v-col cols="12" md="6" class=" pa-md-10">
-          <p class="text-md-h3 text-h4 font-weight-black">ABOUT US</p>
-          <p class=" grey--text text--darken-1 line-height-30">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when
-            an unknown printer took a galley of type and scrambled
-          </p>
+        <v-col cols="12" md="6" class="pa-md-10">
+          <div>
+            <p class="text-md-h3 text-h4 font-weight-black py-3">ABOUT US</p>
+            <p class="grey--text text--darken-1 line-height-30">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English. Lorem Ipsum
+              is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled
+            </p>
+          </div>
         </v-col>
       </v-row>
     </v-container>
