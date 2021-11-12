@@ -94,6 +94,14 @@ body {
   width: 30%;
 }
 
+.h-100{
+  height: 100%!important;
+}
+
+.w-100{
+  width: 100%!important;
+}
+
 .login-card {
   width: 900px;
   border-radius: 25px !important;

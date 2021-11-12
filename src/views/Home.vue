@@ -80,19 +80,16 @@
       </div>
     </section>
     <v-container>
-      <section class="home-section d-flex">
-        <v-spacer></v-spacer>
-        <v-spacer></v-spacer>
-        <v-spacer></v-spacer>
-        <v-img
-          max-height="400"
-          max-width="450"
-          src="../assets/image/Rectangle 12.png"
-        ></v-img>
-        <v-spacer></v-spacer>
-        <div class="w-30 p-5">
-          <h2 class="">ABOUT US</h2>
-          <p class="">
+      <v-row>
+        <v-col cols="12" md="6" class="pl-md-8">
+          <v-img
+            class="w-100 h-100"
+            src="../assets/image/Rectangle 12.png"
+          ></v-img>
+        </v-col>
+        <v-col cols="12" md="6" class=" pa-md-5">
+          <p class="text-md-h3 text-h4 font-weight-black">ABOUT US</p>
+          <p class=" grey--text text--darken-1">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
@@ -102,10 +99,8 @@
             been the industry's standard dummy text ever since the 1500s, when
             an unknown printer took a galley of type and scrambled
           </p>
-        </div>
-        <v-spacer></v-spacer>
-        <v-spacer></v-spacer>
-      </section>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
