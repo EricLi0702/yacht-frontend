@@ -46,26 +46,35 @@
       </div>
       <div class="flex-grow-1">
         <div class="d-flex">
-          <div>
+          <div class="banner-slider-img-con position-relative">
             <img
               src="../assets/image/home/banner-slider-img-1.png"
               alt=""
               class="banner-slider-img"
             />
+            <v-btn fab icon class="position-absolute self-align-justify-center">
+              <v-icon color="white" size="40">mdi-play-circle-outline</v-icon>
+            </v-btn>
           </div>
-          <div>
+          <div class="banner-slider-img-con position-relative">
             <img
               src="../assets/image/home/banner-slider-img-2.png"
               alt=""
               class="banner-slider-img"
             />
+            <v-btn fab icon class="position-absolute self-align-justify-center">
+              <v-icon color="white" size="40">mdi-play-circle-outline</v-icon>
+            </v-btn>
           </div>
-          <div>
+          <div class="banner-slider-img-con position-relative">
             <img
               src="../assets/image/home/banner-slider-img-3.png"
               alt=""
               class="banner-slider-img"
             />
+            <v-btn fab icon class="position-absolute self-align-justify-center">
+              <v-icon color="white" size="40">mdi-play-circle-outline</v-icon>
+            </v-btn>
           </div>
         </div>
       </div>
