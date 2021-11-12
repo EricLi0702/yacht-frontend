@@ -180,28 +180,6 @@
                 </v-img>
               </v-card>
             </v-hover>
-            <!-- <v-img class="w-100 h-100" src="../assets/image/home/yacht1.png">
-                <v-expand-transition>
-                  <div
-                    v-if="hover"
-                    class="
-                      d-flex
-                      transition-fast-in-fast-out
-                      v-card--reveal
-                      justify-center
-                      align-center
-                    "
-                    style="height: 100%"
-                  >
-                    <v-btn dark fab small color="yellow accent-4">
-                      <v-icon dark>mdi-arrow-right</v-icon>
-                    </v-btn>
-                  </div>
-                  <div>
-                    <p>sammie</p>
-                  </div>
-                </v-expand-transition>
-              </v-img> -->
           </div>
         </v-col>
         <v-col cols="12" md="6" class="pa-md-3 pa-2">
