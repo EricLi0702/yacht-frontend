@@ -129,6 +129,18 @@
             <v-hover v-slot="{ hover }">
               <v-card :elevation="hover ? 3 : 0" :class="{ 'on-hover': hover }">
                 <v-img :src="yacht.img">
+                  <template v-slot:placeholder>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-progress-circular
+                        indeterminate
+                        color="grey lighten-5"
+                      ></v-progress-circular>
+                    </v-row>
+                  </template>
                   <div class="position-relative h-100 w-100 d-flex align-end">
                     <div class="px-md-5 px-2 pb-5 white--text">
                       <p class="text-h5 font-weight-bold text-left">
@@ -194,46 +206,48 @@
       <v-row>
         <v-img src="../assets/image/home/wave.png"> </v-img>
       </v-row>
-      <v-row class="bg-white">
+      <v-row class="bg-white pb-16">
         <v-container class="bg-white">
           <v-row>
-            <v-col cols="12" md="6" class="d-flex flex-column">
-              <p
-                class="text-md-h4 text-h5 font-weight-black text-uppercase py-3"
-              >
-                Features
-              </p>
-              <div class="d-flex align-start">
-                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-sail-boat</v-icon>
-                <div>
-                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Longest Yachts</p>
-                  <p class=" grey--text text--darken-1 line-height-30 ">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </p>
+            <v-col cols="12" md="6" class="d-flex align-center">
+              <div class="d-flex flex-column">
+                <p
+                  class="text-md-h4 text-h5 font-weight-black text-uppercase py-3"
+                >
+                  Features
+                </p>
+                <div class="d-flex align-start">
+                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-sail-boat</v-icon>
+                  <div>
+                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Longest Yachts</p>
+                    <p class=" grey--text text--darken-1 line-height-30 ">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking at
+                      its layout.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex align-start">
-                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-currency-btc</v-icon>
-                <div>
-                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Buy Using Bitcoin</p>
-                  <p class=" grey--text text--darken-1 line-height-30 ">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </p>
+                <div class="d-flex align-start">
+                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-currency-btc</v-icon>
+                  <div>
+                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Buy Using Bitcoin</p>
+                    <p class=" grey--text text--darken-1 line-height-30 ">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking at
+                      its layout.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex align-start">
-                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-tag</v-icon>
-                <div>
-                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Resell Further when Needed</p>
-                  <p class=" grey--text text--darken-1 line-height-30 ">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </p>
+                <div class="d-flex align-start">
+                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-tag</v-icon>
+                  <div>
+                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Resell Further when Needed</p>
+                    <p class=" grey--text text--darken-1 line-height-30 ">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking at
+                      its layout.
+                    </p>
+                  </div>
                 </div>
               </div>
             </v-col>
@@ -244,6 +258,11 @@
             </v-col>
           </v-row>
         </v-container>
+      </v-row>
+    </v-container>
+    <v-container class="py-16">
+      <v-row>
+        <v-img src="../assets/image/home/instagram-logo-text.png" max-width="200"></v-img>
       </v-row>
     </v-container>
   </div>
