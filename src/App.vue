@@ -42,7 +42,7 @@ export default {
       } else {
         this.appBarColor = "transparent";
       }
-      if (this.windowTop > 800) {
+      if (this.windowTop > 600) {
         this.showGoTop = true;
       } else {
         this.showGoTop = false;
