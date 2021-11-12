@@ -44,7 +44,11 @@
           </v-row>
         </v-container>
       </div>
-      <div class="flex-grow-1"></div>
+      <div class="flex-grow-1">
+        <img src="../assets/image/home/banner-slider-img-1.png" alt="">
+        <img src="../assets/image/home/banner-slider-img-2.png" alt="">
+        <img src="../assets/image/home/banner-slider-img-3.png" alt="">
+      </div>
     </section>
     <v-container>
       <section class="home-section d-flex">
