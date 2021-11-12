@@ -51,6 +51,10 @@ body {
   }
 }
 
+.bg-white {
+  background: white;
+}
+
 .bg-light-blue {
   background: #f0f5ff;
 }

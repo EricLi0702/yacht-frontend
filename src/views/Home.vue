@@ -85,7 +85,7 @@
         </div>
       </div>
     </section>
-    <v-container class="py-md-16 py-5 ">
+    <v-container class="py-md-16 py-5">
       <v-row>
         <v-col cols="12" md="6" class="pa-md-10">
           <v-img
@@ -118,7 +118,13 @@
         </p>
       </v-row>
       <v-row>
-        <v-col v-for="(yacht, index) in yachtList" :key="index" cols="12" md="6" class="pa-md-3 pa-2">
+        <v-col
+          v-for="(yacht, index) in yachtList"
+          :key="index"
+          cols="12"
+          md="6"
+          class="pa-md-3 pa-2"
+        >
           <div class="w-100 h-100">
             <v-hover v-slot="{ hover }">
               <v-card :elevation="hover ? 3 : 0" :class="{ 'on-hover': hover }">
@@ -126,7 +132,7 @@
                   <div class="position-relative h-100 w-100 d-flex align-end">
                     <div class="px-md-5 px-2 pb-5 white--text">
                       <p class="text-h5 font-weight-bold text-left">
-                        {{yacht.name}}
+                        {{ yacht.name }}
                       </p>
                       <div class="d-flex align-end">
                         <v-icon color="white" class="pr-3"
@@ -136,7 +142,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          {{yacht.length}} Meter
+                          {{ yacht.length }} Meter
                         </p>
                       </div>
                       <div class="d-flex align-end py-3">
@@ -145,7 +151,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          {{yacht.pricePerWeek}}$
+                          {{ yacht.pricePerWeek }}$
                         </p>
                       </div>
                       <div class="d-flex align-end">
@@ -156,7 +162,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          {{yacht.builtDate}}
+                          {{ yacht.builtDate }}
                         </p>
                       </div>
                     </div>
@@ -186,9 +192,58 @@
     </v-container>
     <v-container fluid>
       <v-row>
-        <v-img src="../assets/image/home/wave.png">
-
-        </v-img>
+        <v-img src="../assets/image/home/wave.png"> </v-img>
+      </v-row>
+      <v-row class="bg-white">
+        <v-container class="bg-white">
+          <v-row>
+            <v-col cols="12" md="6" class="d-flex flex-column">
+              <p
+                class="text-md-h4 text-h5 font-weight-black text-uppercase py-3"
+              >
+                Features
+              </p>
+              <div class="d-flex align-start">
+                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-sail-boat</v-icon>
+                <div>
+                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Longest Yachts</p>
+                  <p class=" grey--text text--darken-1 line-height-30 ">
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex align-start">
+                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-currency-btc</v-icon>
+                <div>
+                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Buy Using Bitcoin</p>
+                  <p class=" grey--text text--darken-1 line-height-30 ">
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex align-start">
+                <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-tag</v-icon>
+                <div>
+                  <p class=" font-weight-bold mb-0 pt-3 pb-2">Resell Further when Needed</p>
+                  <p class=" grey--text text--darken-1 line-height-30 ">
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout.
+                  </p>
+                </div>
+              </div>
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-img
+                src="../assets/image/home/feature-rightside-img.png"
+              ></v-img>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-row>
     </v-container>
   </div>
@@ -203,34 +258,34 @@ export default {
 
     yachtList: [
       {
-        name: 'Speed Boat 10',
-        img: require('../assets/image/home/yacht1.png'),
+        name: "Speed Boat 10",
+        img: require("../assets/image/home/yacht1.png"),
         length: 320,
         pricePerWeek: 150,
-        builtDate: '10-Oct-2016',
+        builtDate: "10-Oct-2016",
       },
       {
-        name: 'Princess 18',
-        img: require('../assets/image/home/yacht2.png'),
+        name: "Princess 18",
+        img: require("../assets/image/home/yacht2.png"),
         length: 240,
         pricePerWeek: 1000,
-        builtDate: '21-Sep-2021',
+        builtDate: "21-Sep-2021",
       },
       {
-        name: 'Hercules 07',
-        img: require('../assets/image/home/yacht3.png'),
+        name: "Hercules 07",
+        img: require("../assets/image/home/yacht3.png"),
         length: 450,
         pricePerWeek: 700,
-        builtDate: '03-Jan-2019',
+        builtDate: "03-Jan-2019",
       },
       {
-        name: 'Speed Boat 10',
-        img: require('../assets/image/home/yacht4.png'),
+        name: "Speed Boat 10",
+        img: require("../assets/image/home/yacht4.png"),
         length: 290,
         pricePerWeek: 380,
-        builtDate: '21-May-2020',
+        builtDate: "21-May-2020",
       },
-    ]
+    ],
   }),
   mounted() {
     console.log("imported home page");
