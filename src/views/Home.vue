@@ -279,15 +279,15 @@
                 color="yellow accent-4"
               ></v-text-field>
               <v-text-field
-                label="Your Name"
-                placeholder="Please input your name"
+                label="Your Email"
+                placeholder="Please input your email"
                 outlined
                 class="w-100"
                 color="yellow accent-4"
               ></v-text-field>
               <v-text-field
-                label="Your Name"
-                placeholder="Please input your name"
+                label="Boat Type"
+                placeholder="Please input boat type"
                 outlined
                 class="w-100"
                 color="yellow accent-4"
