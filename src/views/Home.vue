@@ -1,13 +1,50 @@
 <template>
   <div>
-    <section class="home-section">
+    <section class="home-section d-flex flex-column">
       <video class="homeVideo" muted loop autoplay>
         <source :src="videoLink" type="video/mp4" />
         Your browser does not support HTML video.
       </video>
-      <!-- <div class="home-section-container">
-        <h1>ARE YOU INTERESTED?</h1>
-      </div> -->
+      <div class="flex-grow-1"></div>
+      <div class="flex-grow-1">
+        <v-container>
+          <v-row>
+            <v-col cols="12" md="6">
+              <p class="text-md-h3 text-h4 white--text font-weight-bold">
+                ARE YOU <br />
+                INTERESTED?
+              </p>
+              <v-btn
+                rounded
+                dark
+                color="yellow accent-4"
+                class="text-capitalize"
+                elevation="0"
+              >
+                Charter Now
+              </v-btn>
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-row>
+                <v-col cols="12" md="4"></v-col>
+                <v-col cols="12" md="8">
+                  <p class="white--text text-md-h6">
+                    to buy or rent a yacht for few years or months. you have
+                    come to a perfect place. Different yachts at one place.
+                  </p>
+                  <v-icon color="white" size="40" class="mr-2"
+                    >mdi-arrow-left-circle-outline</v-icon
+                  >
+                  <v-icon color="white" size="40"
+                    >mdi-arrow-right-circle-outline</v-icon
+                  >
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+      <div class="flex-grow-1"></div>
     </section>
     <v-container>
       <section class="home-section d-flex">
