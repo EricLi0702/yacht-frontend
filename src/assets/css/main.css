@@ -59,6 +59,10 @@ body {
   background: #f0f5ff;
 }
 
+.bg-transparent-white{
+  background: rgba(255, 255, 255, 0.6);
+}
+
 .app-header {
   /* opacity: 0.3; */
   background-color: white !important;
@@ -158,3 +162,4 @@ body {
 .hover-show-btns {
   color: #ffd400 !important;
 }
+

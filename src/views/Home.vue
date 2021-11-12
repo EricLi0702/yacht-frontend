@@ -16,7 +16,6 @@
               </p>
               <v-btn
                 rounded
-                dark
                 color="yellow accent-4"
                 class="text-capitalize"
                 elevation="0"
@@ -264,6 +263,43 @@
       <v-row>
         <v-img src="../assets/image/home/instagram-logo-text.png" max-width="200"></v-img>
       </v-row>
+    </v-container>
+    <v-container fluid class="pa-0">
+      <v-img src="../assets/image/home/contact-img.png" max-height="800">
+        <img src="../assets/image/home/wave-under.png" class="w-100" alt="">
+        <p class="text-md-h4 text-h5 font-weight-black text-center">If you want to sale your boat? <br /> we got you covered</p>
+        <v-row class="w-100 ma-0 px-2" style="height: calc(100% - 200px)">
+          <v-col cols="12" md="5" class="h-100 mx-auto d-flex flex-row align-center" >
+            <div class="px-lg-5 px-2 w-100 d-flex flex-column align-center pt-16 pb-5  bg-transparent-white rounded-lg" >
+              <v-text-field
+                label="Your Name"
+                placeholder="Please input your name"
+                outlined
+                class="w-100"
+                color="yellow accent-4"
+              ></v-text-field>
+              <v-text-field
+                label="Your Name"
+                placeholder="Please input your name"
+                outlined
+                class="w-100"
+                color="yellow accent-4"
+              ></v-text-field>
+              <v-text-field
+                label="Your Name"
+                placeholder="Please input your name"
+                outlined
+                class="w-100"
+                color="yellow accent-4"
+              ></v-text-field>
+              <v-btn color="yellow accent-4" rounded x-large class=" text-capitalize" elevation="0">
+                Submit
+              </v-btn>
+              <p class="pt-5">One of our Representative will contact you soon.</p>
+            </div>
+          </v-col>
+        </v-row>
+      </v-img>
     </v-container>
   </div>
 </template>
