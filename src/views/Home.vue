@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-light-blue">
     <section class="home-section d-flex flex-column">
       <video class="homeVideo" muted loop autoplay>
         <source :src="videoLink" type="video/mp4" />
@@ -85,7 +85,7 @@
         </div>
       </div>
     </section>
-    <v-container class="py-md-16 py-5">
+    <v-container class="py-md-16 py-5 ">
       <v-row>
         <v-col cols="12" md="6" class="pa-md-10">
           <v-img
@@ -111,7 +111,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container>
+    <v-container class="pb-16">
       <v-row>
         <p class="text-md-h4 text-h5 font-weight-black text-uppercase">
           Yachts
@@ -182,6 +182,13 @@
             </v-hover>
           </div>
         </v-col>
+      </v-row>
+    </v-container>
+    <v-container fluid>
+      <v-row>
+        <v-img src="../assets/image/home/wave.png">
+
+        </v-img>
       </v-row>
     </v-container>
   </div>

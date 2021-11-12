@@ -51,6 +51,10 @@ body {
   }
 }
 
+.bg-light-blue {
+  background: #f0f5ff;
+}
+
 .app-header {
   /* opacity: 0.3; */
   background-color: white !important;
