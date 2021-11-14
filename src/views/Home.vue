@@ -31,12 +31,16 @@
                     to buy or rent a yacht for few years or months. you have
                     come to a perfect place. Different yachts at one place.
                   </p>
-                  <v-icon color="white" size="40" class="mr-2"
-                    >mdi-arrow-left-circle-outline</v-icon
-                  >
-                  <v-icon color="white" size="40"
-                    >mdi-arrow-right-circle-outline</v-icon
-                  >
+                  <v-btn icon class="mr-2" large>
+                    <v-icon color="white" size="40"
+                      >mdi-arrow-left-circle-outline</v-icon
+                    >
+                  </v-btn>
+                  <v-btn icon large>
+                    <v-icon color="white" size="40"
+                      >mdi-arrow-right-circle-outline</v-icon
+                    >
+                  </v-btn>
                 </v-col>
               </v-row>
             </v-col>
@@ -300,7 +304,12 @@
             ></v-img>
             <p class="text-h6 mb-0">@something</p>
           </div>
-          <v-btn rounded class=" text-capitalize" color="yellow accent-4" elevation="0">
+          <v-btn
+            rounded
+            class="text-capitalize"
+            color="yellow accent-4"
+            elevation="0"
+          >
             Follow Now
           </v-btn>
         </v-col>
@@ -310,18 +319,34 @@
               <v-row>
                 <v-col cols="12" md="6"></v-col>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img5.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img5.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img4.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img4.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img3.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img3.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
               </v-row>
             </v-col>
             <v-col cols="12" md="8">
-              <v-img src="../assets/image/home/instagram-img1.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '300': ''"></v-img>
+              <v-img
+                src="../assets/image/home/instagram-img1.png"
+                class="rounded-lg"
+                :max-width="$vuetify.breakpoint.mdAndUp ? '300' : ''"
+              ></v-img>
             </v-col>
           </v-row>
         </v-col>
@@ -331,27 +356,51 @@
             <v-col cols="12" md="3" class="d-flex align-end">
               <v-row>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img9.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img9.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img8.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img8.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
                 <v-col cols="12" md="6"></v-col>
                 <v-col cols="12" md="6">
-                  <v-img src="../assets/image/home/instagram-img10.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img10.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
               </v-row>
             </v-col>
             <v-col cols="12" md="3">
-              <v-img src="../assets/image/home/instagram-img2.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '300': ''"></v-img>
+              <v-img
+                src="../assets/image/home/instagram-img2.png"
+                class="rounded-lg"
+                :max-width="$vuetify.breakpoint.mdAndUp ? '300' : ''"
+              ></v-img>
             </v-col>
             <v-col cols="12" md="3">
               <v-row>
                 <v-col cols="12">
-                  <v-img src="../assets/image/home/instagram-img6.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img6.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '150' : ''"
+                  ></v-img>
                 </v-col>
                 <v-col cols="12">
-                  <v-img src="../assets/image/home/instagram-img7.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '100': ''"></v-img>
+                  <v-img
+                    src="../assets/image/home/instagram-img7.png"
+                    class="rounded-lg"
+                    :max-width="$vuetify.breakpoint.mdAndUp ? '100' : ''"
+                  ></v-img>
                 </v-col>
               </v-row>
             </v-col>
