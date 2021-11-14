@@ -85,6 +85,10 @@ body {
   background: rgba(255, 255, 255, 0.6);
 }
 
+.bg-yellow-transparent{
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .app-header {
   /* opacity: 0.3; */
   background-color: white !important;

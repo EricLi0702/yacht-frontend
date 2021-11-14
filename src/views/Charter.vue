@@ -188,7 +188,103 @@
         </v-col>
         <v-col cols="12">
           <v-row>
-            <v-col>
+            <v-col
+              v-for="(yacht, index) in yachtList"
+              :key="index"
+              cols="12"
+              md="4"
+              class="pa-md-3 pa-2"
+            >
+              <div class="w-100 h-100">
+                <v-hover v-slot="{ hover }">
+                  <v-card
+                    :elevation="hover ? 3 : 0"
+                    :class="{ 'on-hover': hover }"
+                  >
+                    <v-img :src="yacht.img">
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                      <div
+                        class="position-relative h-100 w-100 d-flex align-end"
+                      >
+                        <v-btn
+                          :class="{ 'hover-show-btns': hover }"
+                          color="rgba(255, 255, 255, 0)"
+                          icon
+                          large
+                          class="position-absolute self-align-justify-center"
+                        >
+                          <v-icon
+                            :class="{ 'hover-show-btns': hover }"
+                            color="rgba(255, 255, 255, 0)"
+                            size="40"
+                          >
+                            mdi-arrow-right
+                          </v-icon>
+                        </v-btn>
+                      </div>
+                    </v-img>
+                    <div
+                      class="
+                        px-md-5 px-2
+                        pb-5
+                        white--text
+                        pt-5
+                        bg-yellow-transparent
+                        w-100
+                      "
+                    >
+                      <p class="text-h5 font-weight-bold text-left">
+                        {{ yacht.name }}
+                      </p>
+                      <div class="d-flex align-end">
+                        <v-icon color="white" class="pr-3"
+                          >mdi-sail-boat</v-icon
+                        >
+                        <p class="mb-0" style="width: 130px">Length</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.length }} Meter
+                        </p>
+                      </div>
+                      <div class="d-flex align-end py-3">
+                        <v-icon color="white" class="pr-3">mdi-tag</v-icon>
+                        <p class="mb-0" style="width: 130px">Price per Week</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.pricePerWeek }}$
+                        </p>
+                      </div>
+                      <div class="d-flex align-end">
+                        <v-icon color="white" class="pr-3"
+                          >mdi-calendar-month</v-icon
+                        >
+                        <p class="mb-0" style="width: 130px">Built Date</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.builtDate }}
+                        </p>
+                      </div>
+                      <v-btn color="yellow accent-4" class="mt-2" rounded elevation="3" block>
+                        Make Offer / Buy
+                      </v-btn>
+                    </div>
+                  </v-card>
+                </v-hover>
+              </div>
             </v-col>
           </v-row>
         </v-col>
@@ -285,6 +381,36 @@ export default {
         "Off the beaten track",
         "Antarctica",
         "Galapagos",
+      ],
+      yachtList: [
+        {
+          name: "Speed Boat 10",
+          img: require("../assets/image/home/yacht1.png"),
+          length: 320,
+          pricePerWeek: 150,
+          builtDate: "10-Oct-2016",
+        },
+        {
+          name: "Princess 18",
+          img: require("../assets/image/home/yacht2.png"),
+          length: 240,
+          pricePerWeek: 1000,
+          builtDate: "21-Sep-2021",
+        },
+        {
+          name: "Hercules 07",
+          img: require("../assets/image/home/yacht3.png"),
+          length: 450,
+          pricePerWeek: 700,
+          builtDate: "03-Jan-2019",
+        },
+        {
+          name: "Speed Boat 10",
+          img: require("../assets/image/home/yacht4.png"),
+          length: 290,
+          pricePerWeek: 380,
+          builtDate: "21-May-2020",
+        },
       ],
     };
   },
