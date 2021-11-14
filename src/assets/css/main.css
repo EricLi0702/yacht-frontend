@@ -196,6 +196,10 @@ body {
   z-index: 111;
 }
 
+.min-width-100-px{
+  min-width: 100px;
+}
+
 @media screen and (max-width: 953px) {
   .charter-filter-con{
     top: 56px;
