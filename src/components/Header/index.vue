@@ -16,7 +16,7 @@
             >Rentals</router-link
           >
           <router-link
-            :to="{ path: 'charter' }"
+            :to="{ name: 'charter' }"
             class="mr-5 nav-link white--text"
             >Charter</router-link
           >

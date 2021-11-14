@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header :appBarColor="appBarColor" />
+    <Header :appBarColor="shouldYellow ?shouldAppBarColor: appBarColor" />
     <v-main class="pt-0">
       <router-view></router-view>
     </v-main>
@@ -24,14 +24,44 @@ export default {
   data: () => ({
     windowTop: 0,
     showGoTop: false,
+    shouldYellow: false,
+    shouldAppBarColor: 'transparent',
     appBarColor: "transparent",
   }),
   mounted() {
     window.addEventListener("scroll", this.onScroll);
-    this.SmoothVerticalScrolling();
+  },
+  created() {
+    if (this.currentPath.name == "charter-detail") {
+      this.shouldYellow = true;
+      this.shouldAppBarColor = "yellow accent-4";
+    } else {
+      this.shouldYellow = false;
+      this.shouldAppBarColor = "transparent";
+    }
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.onScroll);
+  },
+  computed: {
+    currentPath() {
+      return this.$route;
+    },
+  },
+  watch: {
+    currentPath: {
+      handler(val) {
+        console.log(val);
+        if (val.name == "charter-detail") {
+          this.shouldYellow = true;
+          this.shouldAppBarColor = "yellow accent-4";
+        } else {
+          this.shouldYellow = false;
+          this.shouldAppBarColor = "transparent";
+        }
+      },
+      deeper: true,
+    },
   },
   methods: {
     onScroll() {
@@ -47,20 +77,6 @@ export default {
       } else {
         this.showGoTop = false;
       }
-    },
-    SmoothVerticalScrolling(e, time, where) {
-      var eTop = e.getBoundingClientRect().top;
-      var eAmt = eTop / 100;
-      var curTime = 0;
-      while (curTime <= time) {
-        window.setTimeout(this.SVS_B, curTime, eAmt, where);
-        curTime += time / 100;
-      }
-    },
-
-    SVS_B(eAmt, where) {
-      if (where == "center" || where == "") window.scrollBy(0, eAmt / 2);
-      if (where == "top") window.scrollBy(0, eAmt);
     },
   },
 };
