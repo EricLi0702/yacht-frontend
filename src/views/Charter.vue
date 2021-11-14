@@ -11,31 +11,14 @@
         <v-img :src="item.src"></v-img>
       </v-carousel-item>
     </v-carousel>
-    <v-container class="">
+    <v-container class="charter-filter-con">
       <v-row>
-        <v-col>
-          <v-select
-            :items="yachtArr"
-            label="YACHT NAME"
-            dense
-            outlined
-            v-model="yachtName"
-          ></v-select>
-        </v-col>
-        <v-col>
-          <v-select
-            :items="locationArr"
-            label="LOCATION"
-            dense
-            outlined
-            v-model="yachtLocation"
-          ></v-select>
-        </v-col>
         <v-col>
           <v-range-slider
             v-model="priceRange"
             :max="priceMax"
             :min="priceMin"
+            color="#ffd400"
             hide-details
             class="align-center"
           >
@@ -44,6 +27,7 @@
                 :value="priceRange[0]"
                 class="mt-0 pt-0"
                 hide-details
+                color="#ffd400"
                 single-line
                 type="number"
                 style="width: 60px"
@@ -54,6 +38,7 @@
               <v-text-field
                 :value="priceRange[1]"
                 class="mt-0 pt-0"
+                color="#ffd400"
                 hide-details
                 single-line
                 type="number"
@@ -64,10 +49,64 @@
           </v-range-slider>
         </v-col>
         <v-col>
-          <v-btn depressed color="primary" @click="filterItemsFunc">
-            search
-          </v-btn>
+          <v-autocomplete
+            v-model="yachtLocation"
+            :items="locationArr"
+            color="#ffd400"
+            outlined
+            label="Location"
+            placeholder="Start typing to select location"
+            dense
+            prepend-inner-icon="mdi-map-marker"
+            hide-details
+            return-object
+            @change="changeLocation"
+          ></v-autocomplete>
         </v-col>
+        <v-col>
+          <v-autocomplete
+            v-model="yachtName"
+            :items="yachtArr"
+            color="#ffd400"
+            outlined
+            label="Yacht Name"
+            placeholder="Start typing to select yacht"
+            dense
+            prepend-inner-icon="mdi-sail-boat"
+            hide-details
+            return-object
+            @change="changeLocation"
+          ></v-autocomplete>
+        </v-col>
+        <v-col>
+          <v-select
+            :items="cabinArr"
+            label="Cabin"
+            dense
+            color="#ffd400"
+            outlined
+            hide-details
+            prepend-inner-icon="mdi-cabin-a-frame"
+            v-model="cabin"
+            :menu-props="{ top: false, offsetY: true }"
+          ></v-select>
+        </v-col>
+        <v-col>
+          <v-select
+            :items="guestArr"
+            label="Guest"
+            dense
+            color="#ffd400"
+            outlined
+            hide-details
+            prepend-inner-icon="mdi-account-multiple"
+            v-model="guest"
+            :menu-props="{ top: false, offsetY: true }"
+          ></v-select>
+        </v-col>
+        <v-btn icon color="#ffd400" @click="filterItemsFunc" class="my-auto">
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
       </v-row>
     </v-container>
     <v-container>
@@ -142,10 +181,16 @@
       </v-row>
       <v-divider />
       <v-row class="ma-0 pt-3">
-        <v-col>
+        <v-col cols="12">
           <p class="text-uppercase grey--text text--darken-3 font-weight-bold">
             Yacht for charter
           </p>
+        </v-col>
+        <v-col cols="12">
+          <v-row>
+            <v-col>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
@@ -178,11 +223,69 @@ export default {
       ],
       yachtName: "",
       yachtLocation: "",
+      cabin: "",
       priceMin: 0,
       priceMax: 1000000,
       priceRange: [0, 1000000],
-      yachtArr: ["tset1", "test2", "test3", "test4", "test5"],
-      locationArr: ["area1", "area2", "area3", "area4", "area5"],
+      cabinArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      guest: -1,
+      yachtArr: [
+        "test1",
+        "test2",
+        "test3",
+        "test4",
+        "test5",
+        "test6",
+        "test7",
+        "test8",
+        "test9",
+        "test10",
+      ],
+      locationArr: [
+        "The Mediterranean",
+        "Greece",
+        "France",
+        "Croatia",
+        "Italy",
+        "Malta",
+        "Montenegro",
+        "Spain",
+        "Turkey",
+        "Adriatic",
+        "Indian Ocean",
+        "Maldives",
+        "Seychelles",
+        "South Pacific",
+        "French Polynesia",
+        "Fiji",
+        "South East Asia",
+        "Thailand",
+        "Bali",
+        "Caribbean",
+        "Bahamas",
+        "Leeward Islands",
+        "Windward Islands",
+        "Greater Antilles",
+        "North America",
+        "Alaska",
+        "New England",
+        "Southeast Florida",
+        "Australasia",
+        "Australia",
+        "New Zealand",
+        "Northern Europe",
+        "Norway",
+        "Sweden",
+        "United Kingdom",
+        "The Baltic",
+        "Central America",
+        "Mexico",
+        "Costa Rica",
+        "Off the beaten track",
+        "Antarctica",
+        "Galapagos",
+      ],
     };
   },
   methods: {

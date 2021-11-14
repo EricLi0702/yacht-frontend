@@ -185,3 +185,14 @@ body {
   color: #ffd400 !important;
 }
 
+.charter-filter-con{
+  position: sticky;
+  top: 64px;
+  background: white;
+}
+
+@media screen and (max-width: 953px) {
+  .charter-filter-con{
+    top: 56px;
+  }
+}
