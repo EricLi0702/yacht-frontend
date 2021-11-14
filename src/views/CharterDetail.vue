@@ -181,127 +181,129 @@
         <v-col>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Built/Refit
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                1943/2015
-              </p>
+              <p class="text-uppercase text-caption">1943/2015</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Builder
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                Canadian Vickers
-              </p>
+              <p class="text-uppercase text-caption">Canadian Vickers</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Length
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                99.06M (325'00")
-              </p>
+              <p class="text-uppercase text-caption">99.06M (325'00")</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Beam
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                10.97M(36'00")
-              </p>
+              <p class="text-uppercase text-caption">10.97M(36'00")</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Draft
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                4.26M(14'00")
-              </p>
+              <p class="text-uppercase text-caption">4.26M(14'00")</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 GT
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                1,802
-              </p>
+              <p class="text-uppercase text-caption">1,802</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Hull
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                Steel
-              </p>
+              <p class="text-uppercase text-caption">Steel</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Stabilisers
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                -
-              </p>
+              <p class="text-uppercase text-caption">-</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Engines
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                2X MAN(2,775HP)
-              </p>
+              <p class="text-uppercase text-caption">2X MAN(2,775HP)</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Generators
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                1X MAN(476KW)
-              </p>
+              <p class="text-uppercase text-caption">1X MAN(476KW)</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Cruising/Max speed
               </p>
             </v-col>
@@ -313,55 +315,57 @@
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Cruise Range
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                -
-              </p>
+              <p class="text-uppercase text-caption">-</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Range
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                12,000NM
-              </p>
+              <p class="text-uppercase text-caption">12,000NM</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Exterior Designer
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                Pinnau
-              </p>
+              <p class="text-uppercase text-caption">Pinnau</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Interior Designer
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                Apostolos Molindris
-              </p>
+              <p class="text-uppercase text-caption">Apostolos Molindris</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Classification
               </p>
             </v-col>
@@ -373,31 +377,38 @@
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Flag
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                Malta
-              </p>
+              <p class="text-uppercase text-caption">Malta</p>
             </v-col>
           </v-row>
+        </v-col>
+      </v-row>
+      <v-divider />
+      <v-row class="ma-0">
+        <v-col>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Staterooms
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                17
-              </p>
+              <p class="text-uppercase text-caption">17</p>
             </v-col>
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Guests
               </p>
             </v-col>
@@ -409,19 +420,33 @@
           </v-row>
           <v-row class="ma-0">
             <v-col cols="5" class="pa-0">
-              <p class=" text-subtitle-2 text-uppercase grey--text text--darken-1">
+              <p
+                class="text-subtitle-2 text-uppercase grey--text text--darken-1"
+              >
                 Crew
               </p>
             </v-col>
             <v-col cols="7" class="pa-0">
-              <p class="text-uppercase text-caption">
-                38
-              </p>
+              <p class="text-uppercase text-caption">38</p>
             </v-col>
           </v-row>
         </v-col>
       </v-row>
       <v-divider />
+      <v-row class="ma-0">
+        <v-col>
+          <v-row class="ma-0">
+            <v-col>
+              <p class="text-caption">
+                * Yachts offered are subject to availability. The particulars
+                are believed to be correct but are not guaranteed and may not be
+                used for contractual purposes. Specification provided for
+                information only.
+              </p>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
     </v-container>
   </v-container>
 </template>
