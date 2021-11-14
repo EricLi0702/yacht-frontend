@@ -278,7 +278,13 @@
                           {{ yacht.builtDate }}
                         </p>
                       </div>
-                      <v-btn color="yellow accent-4" class="mt-2" rounded elevation="3" block>
+                      <v-btn
+                        color="yellow accent-4"
+                        class="mt-2"
+                        rounded
+                        elevation="3"
+                        block
+                      >
                         Make Offer / Buy
                       </v-btn>
                     </div>
