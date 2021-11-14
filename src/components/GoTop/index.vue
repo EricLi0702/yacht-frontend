@@ -1,7 +1,7 @@
 <template>
   <a
     v-if="show"
-    class="back2top-btn"
+    class="back2top-btn text-decoration-none"
     href="#"
     data-aos="fade-up"
     data-aos-easing="linear"
