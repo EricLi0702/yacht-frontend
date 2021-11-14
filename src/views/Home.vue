@@ -479,7 +479,8 @@
 export default {
   data: () => ({
     //
-    videoLink: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // videoLink: "https://www.w3schools.com/html/mov_bbb.mp4",
+    videoLink: "https://player.vimeo.com/external/371636513.hd.mp4?s=a9084205a4de3a96b1af1cda3dc986f4f686963b&profile_id=175",
     //   "https://player.vimeo.com/external/371636513.hd.mp4?s=a9084205a4de3a96b1af1cda3dc986f4f686963b&profile_id=175",
 
     yachtList: [
