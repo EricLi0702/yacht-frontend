@@ -223,6 +223,7 @@
                           icon
                           large
                           class="position-absolute self-align-justify-center"
+                          @click="navToDetail(yacht)"
                         >
                           <v-icon
                             :class="{ 'hover-show-btns': hover }"
@@ -428,6 +429,11 @@ export default {
       payload.priceRange = this.priceRange;
       console.log(payload);
     },
+
+    navToDetail(yacht){
+      console.log("yacht", yacht);
+      this.$router.push({name: 'charter-detail'});
+    }
   },
 };
 </script>

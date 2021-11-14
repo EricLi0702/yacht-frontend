@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Charter from '../views/Charter.vue';
+import CharterDetail from '../views/CharterDetail.vue';
 
 Vue.use(Router);
 
@@ -33,6 +34,11 @@ export const router = new Router({
       path:'/charter',
       component:Charter,
       name:'charter'
+    },
+    {
+      path:'/charter/detail',
+      component:CharterDetail,
+      name:'charter-detail'
     }
   ],
 });
