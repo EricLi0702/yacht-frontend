@@ -89,6 +89,25 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 
+@media (min-width: 1264px) {
+  .container {
+      max-width: 1300px !important;
+  }
+  .container--fluid {
+      max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1904px) {
+  .container {
+      max-width: 1296px !important;
+  }
+}
+
+.container--fluid {
+  max-width: 100% !important;
+}
+
 .app-header {
   /* opacity: 0.3; */
   background-color: white !important;
