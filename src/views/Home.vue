@@ -211,40 +211,57 @@
             <v-col cols="12" md="6" class="d-flex align-center">
               <div class="d-flex flex-column">
                 <p
-                  class="text-md-h4 text-h5 font-weight-black text-uppercase py-3"
+                  class="
+                    text-md-h4 text-h5
+                    font-weight-black
+                    text-uppercase
+                    py-3
+                  "
                 >
                   Features
                 </p>
                 <div class="d-flex align-start">
-                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-sail-boat</v-icon>
+                  <v-icon size="40" color="yellow accent-4" class="pr-3"
+                    >mdi-sail-boat</v-icon
+                  >
                   <div>
-                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Longest Yachts</p>
-                    <p class=" grey--text text--darken-1 line-height-30 ">
+                    <p class="font-weight-bold mb-0 pt-3 pb-2">
+                      Longest Yachts
+                    </p>
+                    <p class="grey--text text--darken-1 line-height-30">
                       It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking at
-                      its layout.
+                      distracted by the readable content of a page when looking
+                      at its layout.
                     </p>
                   </div>
                 </div>
                 <div class="d-flex align-start">
-                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-currency-btc</v-icon>
+                  <v-icon size="40" color="yellow accent-4" class="pr-3"
+                    >mdi-currency-btc</v-icon
+                  >
                   <div>
-                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Buy Using Bitcoin</p>
-                    <p class=" grey--text text--darken-1 line-height-30 ">
+                    <p class="font-weight-bold mb-0 pt-3 pb-2">
+                      Buy Using Bitcoin
+                    </p>
+                    <p class="grey--text text--darken-1 line-height-30">
                       It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking at
-                      its layout.
+                      distracted by the readable content of a page when looking
+                      at its layout.
                     </p>
                   </div>
                 </div>
                 <div class="d-flex align-start">
-                  <v-icon size="40" color="yellow accent-4" class="pr-3">mdi-tag</v-icon>
+                  <v-icon size="40" color="yellow accent-4" class="pr-3"
+                    >mdi-tag</v-icon
+                  >
                   <div>
-                    <p class=" font-weight-bold mb-0 pt-3 pb-2">Resell Further when Needed</p>
-                    <p class=" grey--text text--darken-1 line-height-30 ">
+                    <p class="font-weight-bold mb-0 pt-3 pb-2">
+                      Resell Further when Needed
+                    </p>
+                    <p class="grey--text text--darken-1 line-height-30">
                       It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking at
-                      its layout.
+                      distracted by the readable content of a page when looking
+                      at its layout.
                     </p>
                   </div>
                 </div>
@@ -261,16 +278,113 @@
     </v-container>
     <v-container class="py-16">
       <v-row>
-        <v-img src="../assets/image/home/instagram-logo-text.png" max-width="200"></v-img>
+        <v-col cols="12" md="6">
+          <v-img
+            src="../assets/image/home/instagram-logo-text.png"
+            max-width="200"
+          ></v-img>
+          <p class="text-uppercase text-md-h4 text-h5 font-weight-black">
+            Photos from instagram
+          </p>
+          <p class="grey--text text--darken-1 line-height-30 py-5">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+          <div class="d-flex align-center mb-10">
+            <v-img
+              src="../assets/image/home/instagram-logo-img.png"
+              class="mr-3"
+              max-width="34"
+              width="34"
+              height="34"
+            ></v-img>
+            <p class="text-h6 mb-0">@something</p>
+          </div>
+          <v-btn rounded class=" text-capitalize" color="yellow accent-4" elevation="0">
+            Follow Now
+          </v-btn>
+        </v-col>
+        <v-col cols="12" md="6" class="d-flex align-end">
+          <v-row>
+            <v-col cols="12" md="4" class="d-flex align-end">
+              <v-row>
+                <v-col cols="12" md="6"></v-col>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img5.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img4.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img3.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="8">
+              <v-img src="../assets/image/home/instagram-img1.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '300': ''"></v-img>
+            </v-col>
+          </v-row>
+        </v-col>
+        <v-col cols="12" md="12">
+          <v-row>
+            <v-col cols="12" md="3"></v-col>
+            <v-col cols="12" md="3" class="d-flex align-end">
+              <v-row>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img9.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img8.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+                <v-col cols="12" md="6"></v-col>
+                <v-col cols="12" md="6">
+                  <v-img src="../assets/image/home/instagram-img10.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="3">
+              <v-img src="../assets/image/home/instagram-img2.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '300': ''"></v-img>
+            </v-col>
+            <v-col cols="12" md="3">
+              <v-row>
+                <v-col cols="12">
+                  <v-img src="../assets/image/home/instagram-img6.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '150': ''"></v-img>
+                </v-col>
+                <v-col cols="12">
+                  <v-img src="../assets/image/home/instagram-img7.png" class=" rounded-lg" :max-width="$vuetify.breakpoint.mdAndUp ? '100': ''"></v-img>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-col>
       </v-row>
     </v-container>
     <v-container fluid class="pa-0">
       <v-img src="../assets/image/home/contact-img.png" max-height="800">
-        <img src="../assets/image/home/wave-under.png" class="w-100" alt="">
-        <p class="text-md-h4 text-h5 font-weight-black text-center">If you want to sale your boat? <br /> we got you covered</p>
+        <img src="../assets/image/home/wave-under.png" class="w-100" alt="" />
+        <p class="text-md-h4 text-h5 font-weight-black text-center">
+          If you want to sale your boat? <br />
+          we got you covered
+        </p>
         <v-row class="w-100 ma-0 px-2" style="height: calc(100% - 200px)">
-          <v-col cols="12" md="5" class="h-100 mx-auto d-flex flex-row align-center" >
-            <div class="px-lg-5 px-2 w-100 d-flex flex-column align-center pt-16 pb-5  bg-transparent-white rounded-lg" >
+          <v-col
+            cols="12"
+            md="5"
+            class="h-100 mx-auto d-flex flex-row align-center"
+          >
+            <div
+              class="
+                px-lg-5 px-2
+                w-100
+                d-flex
+                flex-column
+                align-center
+                pt-16
+                pb-5
+                bg-transparent-white
+                rounded-lg
+              "
+            >
               <v-text-field
                 label="Your Name"
                 placeholder="Please input your name"
@@ -292,10 +406,18 @@
                 class="w-100"
                 color="yellow accent-4"
               ></v-text-field>
-              <v-btn color="yellow accent-4" rounded x-large class=" text-capitalize" elevation="0">
+              <v-btn
+                color="yellow accent-4"
+                rounded
+                x-large
+                class="text-capitalize"
+                elevation="0"
+              >
                 Submit
               </v-btn>
-              <p class="pt-5">One of our Representative will contact you soon.</p>
+              <p class="pt-5">
+                One of our Representative will contact you soon.
+              </p>
             </div>
           </v-col>
         </v-row>
