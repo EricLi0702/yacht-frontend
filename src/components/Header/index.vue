@@ -7,11 +7,11 @@
         </router-link>
         <v-spacer></v-spacer>
         <div class="align-center d-flex justify-end">
-          <router-link :to="{ path: 'home' }" class="mr-5 nav-link white--text"
+          <router-link :to="{ name: 'home' }" class="mr-5 nav-link white--text"
             >Home</router-link
           >
           <router-link
-            :to="{ path: 'rental' }"
+            :to="{ name: 'rental' }"
             class="mr-5 nav-link white--text"
             >Rentals</router-link
           >
@@ -20,20 +20,20 @@
             class="mr-5 nav-link white--text"
             >Charter</router-link
           >
-          <router-link :to="{ path: 'about' }" class="mr-5 nav-link white--text"
+          <router-link :to="{ name: 'about' }" class="mr-5 nav-link white--text"
             >About Us</router-link
           >
           <router-link
-            :to="{ path: 'contact' }"
+            :to="{ name: 'contact' }"
             class="mr-5 nav-link white--text"
             >Contact Us</router-link
           >
           <v-spacer></v-spacer>
-          <router-link :to="{ path: 'login' }" class="mr-5 nav-link white--text"
+          <router-link :to="{ name: 'login' }" class="mr-5 nav-link white--text"
             >Log In</router-link
           >
           <router-link
-            :to="{ path: 'register' }"
+            :to="{ name: 'register' }"
             class="mr-5 nav-link white--text"
             >Register</router-link
           >
