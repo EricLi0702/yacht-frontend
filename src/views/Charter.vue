@@ -69,13 +69,13 @@
             :items="yachtArr"
             color="#ffd400"
             outlined
-            label="Yacht Name"
+            label="Yacht Type"
             placeholder="Start typing to select yacht"
             dense
             prepend-inner-icon="mdi-sail-boat"
             hide-details
             return-object
-            @change="changeLocation"
+            @change="changeYachtName"
           ></v-autocomplete>
         </v-col>
         <v-col>
@@ -201,7 +201,7 @@
                     :elevation="hover ? 3 : 0"
                     :class="{ 'on-hover': hover }"
                   >
-                    <v-img :src="yacht.img">
+                    <v-img :src="yacht.images[0]">
                       <template v-slot:placeholder>
                         <v-row
                           class="fill-height ma-0"
@@ -265,7 +265,7 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          {{ yacht.pricePerWeek }}$
+                          {{ yacht.price }}$
                         </p>
                       </div>
                       <div class="d-flex align-end">
@@ -276,7 +276,40 @@
                         <p
                           class="mb-0 text-body-1 font-weight-bold font-italic"
                         >
-                          {{ yacht.builtDate }}
+                          {{ yacht.built }}
+                        </p>
+                      </div>
+                      <div class="d-flex align-end">
+                        <v-icon color="white" class="pr-3"
+                          >mdi-map-marker</v-icon
+                        >
+                        <p class="mb-0" style="width: 130px">Location</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.region }}
+                        </p>
+                      </div>
+                      <div class="d-flex align-end">
+                        <v-icon color="white" class="pr-3"
+                          >mdi-cabin-a-frame</v-icon
+                        >
+                        <p class="mb-0" style="width: 130px">Cabin</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.cabin }}
+                        </p>
+                      </div>
+                      <div class="d-flex align-end">
+                        <v-icon color="white" class="pr-3"
+                          >mdi-human-male-male</v-icon
+                        >
+                        <p class="mb-0" style="width: 130px">Guest</p>
+                        <p
+                          class="mb-0 text-body-1 font-weight-bold font-italic"
+                        >
+                          {{ yacht.guest }}
                         </p>
                       </div>
                       <v-btn
@@ -327,23 +360,16 @@ export default {
       yachtName: "",
       yachtLocation: "",
       cabin: "",
-      priceMin: 0,
+      priceMin: 1,
       priceMax: 1000000,
-      priceRange: [0, 1000000],
+      priceRange: [1, 1000000],
       cabinArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      guest: -1,
+      guest: "",
       yachtArr: [
-        "test1",
-        "test2",
-        "test3",
-        "test4",
-        "test5",
-        "test6",
-        "test7",
-        "test8",
-        "test9",
-        "test10",
+        "All",
+        "Motor",
+        "Sail"
       ],
       locationArr: [
         "The Mediterranean",
@@ -394,46 +420,71 @@ export default {
           name: "Speed Boat 10",
           img: require("../assets/image/home/yacht1.png"),
           length: 320,
-          pricePerWeek: 150,
-          builtDate: "10-Oct-2016",
+          price: 150,
+          built: "10-Oct-2016",
         },
         {
           name: "Princess 18",
           img: require("../assets/image/home/yacht2.png"),
           length: 240,
-          pricePerWeek: 1000,
-          builtDate: "21-Sep-2021",
+          price: 1000,
+          built: "21-Sep-2021",
         },
         {
           name: "Hercules 07",
           img: require("../assets/image/home/yacht3.png"),
           length: 450,
-          pricePerWeek: 700,
-          builtDate: "03-Jan-2019",
+          price: 700,
+          built: "03-Jan-2019",
         },
         {
           name: "Speed Boat 10",
           img: require("../assets/image/home/yacht4.png"),
           length: 290,
-          pricePerWeek: 380,
-          builtDate: "21-May-2020",
+          price: 380,
+          built: "21-May-2020",
         },
       ],
     };
   },
+  async created() {
+    // if (this.$store.state.allShipData == null) {
+    //   this.$store.dispatch("getAllShip");
+    //   console.log(this.$store.state.allShipData);
+    // }
+    await this.$store.dispatch("getAllShip");
+    this.yachtList = this.$store.state.allShipData;
+    console.log("=====",this.yachtList)
+    // this.yachtList.map((yacht) => {
+    //   let requiredImg = []
+    //   yacht.images.map((item) => {
+    //     let img = require(item)
+    //     requiredImg.push(img);
+    //   });
+    //   yacht.images = requiredImg;
+    //   console.log("requiredImg", requiredImg)
+    // })
+  },
   methods: {
-    filterItemsFunc() {
+    async filterItemsFunc() {
       const payload = {};
       payload.yachtName = this.yachtName;
       payload.yachtLocation = this.yachtLocation;
       payload.priceRange = this.priceRange;
+      payload.cabin = this.cabin;
+      payload.guest = this.guest;
       console.log(payload);
+      await this.$store.dispatch("getCharter", payload);
+      console.log('------',this.$store.state.charterData)
+      this.yachtList = this.$store.state.charterData
     },
 
-    navToDetail(yacht){
+    navToDetail(yacht) {
       console.log("yacht", yacht);
-      this.$router.push({name: 'charter-detail'});
-    }
+      this.$router.push({ name: "charter-detail" });
+    },
+    changeLocation() {},
+    changeYachtName() {},
   },
 };
 </script>
