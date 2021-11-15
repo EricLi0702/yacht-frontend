@@ -11,7 +11,7 @@
               text--darken-3 text-uppercase
             "
           >
-            Christina o
+            {{this.yachtData.name}}
           </p>
         </v-col>
       </v-row>
@@ -33,7 +33,7 @@
               >
                 Length
               </p>
-              <p class="">99.06M/325'00"</p>
+              <p class="">{{this.yachtData.length}} Meter</p>
             </div>
             <div class="d-flex align-center">
               <p
@@ -47,7 +47,7 @@
               >
                 Builder
               </p>
-              <p class="text-uppercase">Canadian vickers</p>
+              <p class="text-uppercase">{{this.yachtData.shipYard}}</p>
             </div>
             <div class="d-flex align-center">
               <p
@@ -61,7 +61,7 @@
               >
                 Built/refit
               </p>
-              <p>1943/2015</p>
+              <p>{{this.yachtData.built}}</p>
             </div>
             <div class="d-flex align-center">
               <p
@@ -76,7 +76,7 @@
                 Guests
               </p>
               <p>
-                157 <sub class="text-uppercase">(cruising)</sub> / 34<sub
+                157 <sub class="text-uppercase">(cruising)</sub> / {{this.yachtData.guest}}<sub
                   class="text-uppercase"
                   >(sleeping)</sub
                 >
@@ -95,8 +95,8 @@
                 Location
               </p>
               <div>
-                <p>Summer: Atlantic Ocean</p>
-                <p>Winter: Central America</p>
+                <p>Summer: {{this.yachtData.region}}</p>
+                <p>Winter: {{this.yachtData.region}}</p>
               </div>
             </div>
             <div class="d-flex align-start">
@@ -112,8 +112,8 @@
                 Rate/Week
               </p>
               <div>
-                <p>Summer: From $780,000 (Approx. $ 800,000)</p>
-                <p>Winter: From $540,000 (Approx. $ 600,000)</p>
+                <p>Summer: From ${{this.yachtData.price}} (Approx. $ 800,000)</p>
+                <p>Winter: From ${{this.yachtData.price}} (Approx. $ 600,000)</p>
               </div>
             </div>
           </div>
@@ -457,6 +457,20 @@ export default {
   components: {
     carousel,
   },
+  data:()=>({
+    yachtData:null
+  }),
+  computed:{
+    currentPath(){
+      return this.$route
+    }
+  },
+  created(){
+    console.log('==================',this.currentPath)
+    if(this.currentPath.params.yacht){
+      this.yachtData = this.currentPath.params.yacht
+    }
+  }
 };
 </script>
 

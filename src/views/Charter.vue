@@ -201,7 +201,7 @@
                     :elevation="hover ? 3 : 0"
                     :class="{ 'on-hover': hover }"
                   >
-                    <v-img :src="yacht.images[0]">
+                    <v-img :src="require('../assets/image/home/' + yacht.images[0])">
                       <template v-slot:placeholder>
                         <v-row
                           class="fill-height ma-0"
@@ -481,7 +481,7 @@ export default {
 
     navToDetail(yacht) {
       console.log("yacht", yacht);
-      this.$router.push({ name: "charter-detail" });
+      this.$router.push({ name: "charter-detail" ,params:{yacht:yacht}});
     },
     changeLocation() {},
     changeYachtName() {},
