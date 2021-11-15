@@ -36,6 +36,21 @@ export const router = new Router({
       name:'charter'
     },
     {
+      path:'/rental',
+      component:Charter,
+      name:'rental'
+    },
+    {
+      path:'/about',
+      component:Charter,
+      name:'about'
+    },
+    {
+      path:'/contact',
+      component:Charter,
+      name:'contact'
+    },
+    {
       path:'/charter/detail',
       component:CharterDetail,
       name:'charter-detail'
