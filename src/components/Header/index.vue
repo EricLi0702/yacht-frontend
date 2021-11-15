@@ -29,6 +29,7 @@
             >Contact Us</router-link
           >
           <v-spacer></v-spacer>
+
           <router-link :to="{ name: 'login' }" class="mr-5 nav-link white--text"
             >Log In</router-link
           >
@@ -44,10 +45,23 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
+  computed: mapGetters({
+    isAuthenticated: "isAuthenticated",
+    user: 'authData',
+  }),
+  created(){
+    console.log("this.isAuthenticated", this.isAuthenticated)
+    console.log("this.authData", this.user)
+  },
   props: {
     appBarColor: String,
   },
+  data: () => ({
+    isAuth: false,
+  }),
+  
   methods: {},
 };
 </script>

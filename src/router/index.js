@@ -3,9 +3,9 @@ import Router from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import Charter from '../views/Charter.vue';
-import CharterDetail from '../views/CharterDetail.vue';
-
+import Charter from "../views/Charter.vue";
+import CharterDetail from "../views/CharterDetail.vue";
+import Settings from "../views/Settings";
 Vue.use(Router);
 
 export const router = new Router({
@@ -31,30 +31,35 @@ export const router = new Router({
       name: "register",
     },
     {
-      path:'/charter',
-      component:Charter,
-      name:'charter'
+      path: "/charter",
+      component: Charter,
+      name: "charter",
     },
     {
-      path:'/rental',
-      component:Charter,
-      name:'rental'
+      path: "/rental",
+      component: Charter,
+      name: "rental",
     },
     {
-      path:'/about',
-      component:Charter,
-      name:'about'
+      path: "/about",
+      component: Charter,
+      name: "about",
     },
     {
-      path:'/contact',
-      component:Charter,
-      name:'contact'
+      path: "/contact",
+      component: Charter,
+      name: "contact",
     },
     {
-      path:'/charter/detail',
-      component:CharterDetail,
-      name:'charter-detail'
-    }
+      path: "/charter/detail",
+      component: CharterDetail,
+      name: "charter-detail",
+    },
+    {
+      path: "/settings",
+      component: Settings,
+      name: "settings",
+    },
   ],
 });
 

@@ -32,6 +32,7 @@ export default new Vuex.Store({
   //to handle state
   getters: {
     authData: (state) => state.authData,
+    isAuthenticated: (state) => state.isAuthenticated,
   },
 
   //to handle actions
