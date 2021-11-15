@@ -144,6 +144,10 @@ body {
   color: black !important;
 }
 
+.h-100-vh{
+  height: 100vh!important;
+}
+
 .w-50 {
   width: 50%;
 }
@@ -217,6 +221,11 @@ body {
 
 .min-width-100-px{
   min-width: 100px;
+}
+
+.put-item-middle{
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 953px) {

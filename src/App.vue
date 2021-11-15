@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <Header :appBarColor="shouldYellow ?shouldAppBarColor: appBarColor" />
+    <Header v-if="isShownHeader" :appBarColor="shouldYellow ? shouldAppBarColor : appBarColor" />
     <v-main class="pt-0">
       <router-view></router-view>
     </v-main>
-    <Footer />
+    <Footer v-if="isShownFooter" />
     <GoTop :show="showGoTop" />
   </v-app>
 </template>
@@ -25,19 +25,34 @@ export default {
     windowTop: 0,
     showGoTop: false,
     shouldYellow: false,
-    shouldAppBarColor: 'transparent',
+    shouldAppBarColor: "transparent",
     appBarColor: "transparent",
+    isShownHeader: true,
+    isShownFooter: true,
   }),
   mounted() {
+    console.log("((((((CREATED")
     window.addEventListener("scroll", this.onScroll);
   },
   created() {
+    console.log("RRRRR")
+    console.log("++++++++++++CURRENT_PATH: ", this.currentPath.name)
     if (this.currentPath.name == "charter-detail") {
       this.shouldYellow = true;
       this.shouldAppBarColor = "yellow accent-4";
     } else {
       this.shouldYellow = false;
       this.shouldAppBarColor = "transparent";
+    }
+    if (
+      this.currentPath.name == "login" ||
+      this.currentPath.name == "register"
+    ) {
+      this.isShownHeader = false;
+      this.isShownFooter = false;
+    } else {
+      this.isShownHeader = true;
+      this.isShownFooter = true;
     }
   },
   beforeDestroy() {
@@ -58,6 +73,13 @@ export default {
         } else {
           this.shouldYellow = false;
           this.shouldAppBarColor = "transparent";
+        }
+        if (val.name == "login" || val.name == "register") {
+          this.isShownHeader = false;
+          this.isShownFooter = false;
+        } else {
+          this.isShownHeader = true;
+          this.isShownFooter = true;
         }
       },
       deeper: true,
