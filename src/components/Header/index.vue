@@ -30,14 +30,19 @@
           >
           <v-spacer></v-spacer>
 
-          <router-link :to="{ name: 'login' }" class="mr-5 nav-link white--text"
+          <router-link
+            v-if="isAuthenticated !== true"
+            :to="{ name: 'login' }"
+            class="mr-5 nav-link white--text"
             >Log In</router-link
           >
           <router-link
+            v-if="isAuthenticated !== true"
             :to="{ name: 'register' }"
             class="mr-5 nav-link white--text"
             >Register</router-link
           >
+          <Account v-if="isAuthenticated == true" />
         </div>
       </v-row>
     </v-container>
@@ -46,14 +51,18 @@
 
 <script>
 import { mapGetters } from "vuex";
+import Account from "../Account";
 export default {
+  components: {
+    Account,
+  },
   computed: mapGetters({
     isAuthenticated: "isAuthenticated",
-    user: 'authData',
+    user: "authData",
   }),
-  created(){
-    console.log("this.isAuthenticated", this.isAuthenticated)
-    console.log("this.authData", this.user)
+  created() {
+    console.log("this.isAuthenticated", this.isAuthenticated);
+    console.log("this.authData", this.user);
   },
   props: {
     appBarColor: String,
@@ -61,7 +70,7 @@ export default {
   data: () => ({
     isAuth: false,
   }),
-  
+
   methods: {},
 };
 </script>

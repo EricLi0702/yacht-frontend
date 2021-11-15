@@ -5,7 +5,7 @@
         v-bind="attrs"
         v-on="on"
         v-if="user.name !== '' && user.avatar == '/'"
-        color="#50645a"
+        color="#fc8600"
         size="40"
       >
         <span class="white--text headline">{{ user.name[0] }}</span>
@@ -17,14 +17,14 @@
     <v-list>
       <v-list-item @click.prevent="navToProfile">
         <v-list-item-title class="justify-space-between d-flex align-center">
-          <p class="mb-0">{{ $t("navbar").settings }}</p>
-          <v-icon color="#50645a" size="25" right>mdi-cog-outline</v-icon>
+          <p class="mb-0">Settings</p>
+          <v-icon color="#fc8600" size="25" right>mdi-cog-outline</v-icon>
         </v-list-item-title>
       </v-list-item>
       <v-list-item @click.prevent="logout">
         <v-list-item-title class="justify-space-between d-flex align-center">
-          <p class="mb-0">{{ $t("navbar").logOut }}</p>
-          <v-icon color="#50645a" size="25" right
+          <p class="mb-0">Logout</p>
+          <v-icon color="#fc8600" size="25" right
             >mdi-account-arrow-right-outline</v-icon
           >
         </v-list-item-title>
