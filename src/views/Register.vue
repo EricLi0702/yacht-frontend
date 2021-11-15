@@ -46,6 +46,14 @@
             v-if="userType == 'user'"
           >
             <v-text-field
+              v-model="name"
+              :rules="nameRules"
+              label="Name"
+              required
+              color="yellow accent-4"
+            ></v-text-field>
+
+            <v-text-field
               v-model="email"
               :rules="emailRules"
               label="E-mail"
@@ -187,6 +195,10 @@ export default {
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
+    name: "",
+    nameRules: [
+      (v) => !!v || "Name is required",
+    ],
     showPass: false,
     showConPass: false,
   }),
@@ -195,6 +207,7 @@ export default {
       console.log("userType:", val);
       this.email = "";
       this.password = "";
+      this.name = "";
       this.confirmPassword = "";
       this.showPass = false;
       this.showConPass = false;
@@ -202,11 +215,21 @@ export default {
   },
 
   methods: {
-    signUp() {
-      console.log("signup");
+    async signUp() {
+      
       if (this.password != this.confirmPassword) {
         return this.$vToastify.error("confirm password does not match");
       }
+      let payload = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        roles: this.userType == 'user'? ['user'] : ['owner'],
+      }
+      console.log("signup", payload);
+      await this.$store.dispatch("signUp", payload)
+      this.$router.push({name: 'login'})
+      
     },
   },
 };

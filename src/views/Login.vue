@@ -29,10 +29,15 @@
 
             <v-text-field
               v-model="password"
+              :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="passwordRules"
+              :type="showPass ? 'text' : 'password'"
+              name="input-10-1"
               label="Password"
+              hint="At least 8 characters"
+              counter
               color="yellow accent-4"
-              required
+              @click:append="showPass = !showPass"
             ></v-text-field>
 
             <v-btn
@@ -84,19 +89,21 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
     isLoading: false,
+    showPass: false,
   }),
 
   methods: {
-    login() {
+    async login() {
       console.log(this.email, this.password);
       if (this.email === "" || this.password === "") {
         return this.$vToastify.error("please enter email or password");
       }
       this.isLoading = true;
-      this.$store.dispatch("signIn", {
-        email: "owner@owner.com",
-        password: "password",
+      await this.$store.dispatch("signIn", {
+        email: this.email,
+        password: this.password,
       });
+      this.$router.push({name: 'home'})
       this.isLoading = false;
     },
   },

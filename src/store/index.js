@@ -7,8 +7,11 @@ Vue.use(Vuex);
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
 axios.defaults.headers.common["authorization"] =
   "Bearer " + localStorage.getItem("authData")?.accessToken;
-// axios.defaults.headers.common["Content-Type"] = "application/json";
-// axios.defaults.headers.common["Accept"] = "application/json";
+axios.defaults.headers.common["Content-Type"] = "application/json";
+axios.defaults.headers.common["Accept"] = "application/json";
+axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+// axios.defaults.headers.common["Access-Control-Allow-Headers"] = "*";
 //to handle state
 export default new Vuex.Store({
   state: {
@@ -20,6 +23,9 @@ export default new Vuex.Store({
       : null,
     allShipData: localStorage.getItem("allShipData")
       ? JSON.parse(localStorage.getItem("allShipData"))
+      : null,
+    isAuthenticated: localStorage.getItem("isAuthenticated")
+      ? JSON.parse(localStorage.getItem("isAuthenticated"))
       : null,
   },
 
@@ -43,11 +49,13 @@ export default new Vuex.Store({
           console.log("signin error: ", err);
         });
     },
+    // eslint-disable-next-line no-empty-pattern
     async signUp({ commit }, payload) {
       await axios
         .post("/auth/signup", payload)
         .then((res) => {
           console.log(res);
+          // this.$router.push({name: 'login'})
           commit("setAuthData", res.data);
           localStorage.setItem("authData", JSON.stringify(res.data));
           localStorage.setItem("isAuthenticated", true);
