@@ -1,23 +1,29 @@
 <template>
-  <v-container class="mt-5 justify-center d-flex">
+  <v-container class="justify-center d-flex align-center h-100-vh">
     <v-card elevation="24" class="login-card">
-      <h2 class="pa-5 text-center">Log in</h2>
+      <v-card-title class="position-relative text-center">
+        <p class="w-100 text-md-h4 font-weight-black text-h5 text-center mb-0">
+          Log in
+        </p>
+        <v-btn
+          icon
+          class="position-absolute put-item-middle"
+          style="right: 20px"
+          href="/home"
+        >
+          <v-icon color="yellow accent-4" size="35">mdi-home</v-icon>
+        </v-btn>
+      </v-card-title>
       <v-divider></v-divider>
 
       <v-row>
-        <v-col cols="12" md="7">
-          <v-img
-            width="100%"
-            height="600"
-            src="../assets/image/login.jpg"
-          ></v-img>
-        </v-col>
         <v-col cols="12" md="5" class="py-16 px-8">
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               v-model="email"
               :rules="emailRules"
               label="E-mail"
+              color="yellow accent-4"
               required
             ></v-text-field>
 
@@ -25,20 +31,39 @@
               v-model="password"
               :rules="passwordRules"
               label="Password"
+              color="yellow accent-4"
               required
             ></v-text-field>
 
             <v-btn
               :disabled="!valid"
               :loading="isLoading"
-              color="success"
-              class="mr-4 mt-10"
+              color="yellow accent-4"
+              class="mt-5"
               @click="login"
+              block
+              rounded
             >
               Login
             </v-btn>
+            <div
+              class="w-100 d-flex align-center justify-center text-center pt-3"
+            >
+              <p class="mb-0 text-caption grey--text text--darken-2">
+                Are you new here?
+                <a href="/register" class="text-decoration-none">Register here.</a>
+              </p>
+            </div>
           </v-form>
         </v-col>
+        <v-col cols="12" md="7" class="hidden-sm-and-down">
+          <v-img
+            height="600"
+            src="../assets/image/login.jpg"
+            class="rounded-br-xl"
+          ></v-img>
+        </v-col>
+        
       </v-row>
     </v-card>
   </v-container>
@@ -58,23 +83,21 @@ export default {
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
-    isLoading:false
+    isLoading: false,
   }),
 
   methods: {
     login() {
       console.log(this.email, this.password);
-      if(this.email === '' || this.password === ''){
-         return this.$vToastify.error(
-          "please enter email or password"
-        );
+      if (this.email === "" || this.password === "") {
+        return this.$vToastify.error("please enter email or password");
       }
-      this.isLoading = true
+      this.isLoading = true;
       this.$store.dispatch("signIn", {
         email: "owner@owner.com",
         password: "password",
       });
-      this.isLoading = false
+      this.isLoading = false;
     },
   },
 };
