@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <Header v-if="isShownHeader" :appBarColor="shouldYellow ? shouldAppBarColor : appBarColor" />
+    <Header
+      v-if="isShownHeader"
+      :appBarColor="shouldYellow ? shouldAppBarColor : appBarColor"
+    />
     <v-main class="pt-0">
       <router-view></router-view>
     </v-main>
@@ -31,13 +34,16 @@ export default {
     isShownFooter: true,
   }),
   mounted() {
-    console.log("((((((CREATED")
+    console.log("((((((CREATED");
     window.addEventListener("scroll", this.onScroll);
   },
   created() {
-    console.log("RRRRR")
-    console.log("++++++++++++CURRENT_PATH: ", this.currentPath.name)
-    if (this.currentPath.name == "charter-detail") {
+    console.log("RRRRR");
+    console.log("++++++++++++CURRENT_PATH: ", this.currentPath.name);
+    if (
+      this.currentPath.name == "charter-detail" ||
+      this.currentPath.name.includes("settings")
+    ) {
       this.shouldYellow = true;
       this.shouldAppBarColor = "yellow accent-4";
     } else {
@@ -67,7 +73,7 @@ export default {
     currentPath: {
       handler(val) {
         console.log(val);
-        if (val.name == "charter-detail") {
+        if (val.name == "charter-detail" || val.name.includes("settings")) {
           this.shouldYellow = true;
           this.shouldAppBarColor = "yellow accent-4";
         } else {
