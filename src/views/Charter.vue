@@ -54,7 +54,7 @@
             :items="locationArr"
             color="#ffd400"
             outlined
-            label="Location"
+            label="Where"
             placeholder="Start typing to select location"
             dense
             prepend-inner-icon="mdi-map-marker"
@@ -63,9 +63,24 @@
             @change="changeLocation"
           ></v-autocomplete>
         </v-col>
+         <v-col>
+          <v-autocomplete
+            v-model="season"
+            :items="seasonArr"
+            color="#ffd400"
+            outlined
+            label="When"
+            placeholder="Start typing to select location"
+            dense
+            prepend-inner-icon="mdi-calendar-arrow-right"
+            hide-details
+            return-object
+            @change="changeLocation"
+          ></v-autocomplete>
+        </v-col>
         <v-col>
           <v-autocomplete
-            v-model="yachtName"
+            v-model="yachtType"
             :items="yachtArr"
             color="#ffd400"
             outlined
@@ -91,7 +106,7 @@
             :menu-props="{ top: false, offsetY: true }"
           ></v-select>
         </v-col>
-        <v-col>
+        <!-- <v-col>
           <v-select
             :items="guestArr"
             label="Guest"
@@ -103,7 +118,7 @@
             v-model="guest"
             :menu-props="{ top: false, offsetY: true }"
           ></v-select>
-        </v-col>
+        </v-col> -->
         <v-btn icon color="#ffd400" @click="filterItemsFunc" class="my-auto">
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
@@ -357,19 +372,26 @@ export default {
           src: require("../assets/image/charter6.jpg"),
         },
       ],
-      yachtName: "",
+      season: "",
+      yachtType:"",
       yachtLocation: "",
       cabin: "",
       priceMin: 1,
-      priceMax: 1000000,
-      priceRange: [1, 1000000],
-      cabinArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      priceMax: 100000000,
+      priceRange: [1, 100000000],
+      cabinArr: ['4','5','6','7','8','9','10','11','12','12+'],
       guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       guest: "",
       yachtArr: [
         "All",
         "Motor",
         "Sail"
+      ],
+      seasonArr:[
+        "Summer 2021",
+        "Winter 2021-2022",
+        "Summer 2022",
+        "Winter 2022-2023"
       ],
       locationArr: [
         "The Mediterranean",
@@ -448,31 +470,19 @@ export default {
     };
   },
   async created() {
-    // if (this.$store.state.allShipData == null) {
-    //   this.$store.dispatch("getAllShip");
-    //   console.log(this.$store.state.allShipData);
-    // }
     await this.$store.dispatch("getAllShip");
     this.yachtList = this.$store.state.allShipData;
     console.log("=====",this.yachtList)
-    // this.yachtList.map((yacht) => {
-    //   let requiredImg = []
-    //   yacht.images.map((item) => {
-    //     let img = require(item)
-    //     requiredImg.push(img);
-    //   });
-    //   yacht.images = requiredImg;
-    //   console.log("requiredImg", requiredImg)
-    // })
   },
   methods: {
     async filterItemsFunc() {
       const payload = {};
-      payload.yachtName = this.yachtName;
+      payload.yachtType = this.yachtType;
       payload.yachtLocation = this.yachtLocation;
       payload.priceRange = this.priceRange;
       payload.cabin = this.cabin;
-      payload.guest = this.guest;
+      payload.season = this.season;
+      // payload.guest = this.guest;
       console.log(payload);
       await this.$store.dispatch("getCharter", payload);
       console.log('------',this.$store.state.charterData)
