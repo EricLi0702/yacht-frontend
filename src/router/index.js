@@ -6,6 +6,10 @@ import Register from "../views/Register.vue";
 import Charter from "../views/Charter.vue";
 import CharterDetail from "../views/CharterDetail.vue";
 import Settings from "../views/Settings";
+import Profile from "../views/Settings/Profile";
+import Password from "../views/Settings/Password";
+import Yachts from "../views/Settings/Yachts";
+
 Vue.use(Router);
 
 export const router = new Router({
@@ -59,6 +63,27 @@ export const router = new Router({
       path: "/settings",
       component: Settings,
       name: "settings",
+      children: [
+        {
+          path: "/",
+          redirect: { name: "settings.profile" },
+        },
+        {
+          path: "profile",
+          component: Profile,
+          name: "settings.profile",
+        },
+        {
+          path: "password",
+          component: Password,
+          name: "settings.password",
+        },
+        {
+          path: "yachts",
+          component: Yachts,
+          name: "settings.yachts",
+        },
+      ],
     },
   ],
 });
