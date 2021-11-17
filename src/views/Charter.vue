@@ -1,33 +1,35 @@
 <template>
   <div>
-    <!-- <v-img src="../assets/image/charter1.jpg"></v-img> -->
     <carousel
-            :nav="false"
-            :items="1"
-            :dots="false"
-            :margin="0"
-            :loop="false"
-            :autoplay="true"
-            :autoplaySpeed="1500"
-            :responsive="{
-              0: {
-                items: 1,
-              },
-              600: {
-                items: 1,
-              },
-              1000: {
-                items: 1,
-              },
-              1500: {
-                items: 1,
-              },
-            }"
-          >
-            <v-img v-for="(item, i) in items" :key="i" :src="item.src"></v-img>
-          </carousel>
-    
-    <v-container fluid class="charter-filter-con d-md-flex align-end elevation-5">
+      :nav="false"
+      :items="1"
+      :dots="false"
+      :margin="0"
+      :loop="false"
+      :autoplay="true"
+      :autoplaySpeed="1500"
+      :responsive="{
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 1,
+        },
+        1000: {
+          items: 1,
+        },
+        1500: {
+          items: 1,
+        },
+      }"
+    >
+      <v-img v-for="(item, i) in items" :key="i" :src="item.src"></v-img>
+    </carousel>
+
+    <v-container
+      fluid
+      class="charter-filter-con d-md-flex align-end elevation-5"
+    >
       <v-container>
         <v-row>
           <v-col cols="12" md="6">
@@ -47,7 +49,6 @@
                   color="#ffd400"
                   single-line
                   type="number"
-                  style="width: 60px"
                   @change="$set(priceRange, 0, $event)"
                 ></v-text-field>
               </template>
@@ -59,7 +60,6 @@
                   hide-details
                   single-line
                   type="number"
-                  style="width: 60px"
                   @change="$set(priceRange, 1, $event)"
                 ></v-text-field>
               </template>
