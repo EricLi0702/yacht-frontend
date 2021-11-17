@@ -89,6 +89,19 @@ export default new Vuex.Store({
           console.log("getAllShip: ", err);
         });
     },
+    async updateUser({ commit }, payload) {
+      await axios
+        .post("/profile/update", payload)
+        .then((res) => {
+          console.log(res);
+          commit("setAuthData", res.data);
+          localStorage.setItem("authData", JSON.stringify(res.data));
+          localStorage.setItem("isAuthenticated", true);
+        })
+        .catch((err) => {
+          console.log("signup error: ", err);
+        });
+    },
   },
 
   //to handle mutations

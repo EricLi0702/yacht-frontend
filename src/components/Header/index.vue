@@ -29,20 +29,23 @@
             >Contact Us</router-link
           >
           <v-spacer></v-spacer>
-
-          <router-link
-            v-if="isAuthenticated !== true"
-            :to="{ name: 'login' }"
-            class="mr-5 nav-link white--text"
-            >Log In</router-link
-          >
-          <router-link
-            v-if="isAuthenticated !== true"
-            :to="{ name: 'register' }"
-            class="mr-5 nav-link white--text"
-            >Register</router-link
-          >
           <Account v-if="isAuthenticated == true" />
+          <div v-else>
+            <router-link
+              v-if="isAuthenticated !== true"
+              :to="{ name: 'login' }"
+              class="mr-5 nav-link white--text"
+              >Log In</router-link
+            >
+            <router-link
+              v-if="isAuthenticated !== true"
+              :to="{ name: 'register' }"
+              class="mr-5 nav-link white--text"
+              >Register</router-link
+            >
+
+          </div>
+          
         </div>
       </v-row>
     </v-container>

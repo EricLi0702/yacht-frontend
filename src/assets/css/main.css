@@ -212,11 +212,23 @@ body {
   color: #ffd400 !important;
 }
 
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.img-pb-0 .v-responsive__sizer {
+  padding-bottom: 0 !important;
+}
+
 .charter-filter-con{
   position: sticky;
   top: 64px;
   background: white;
   z-index: 111;
+}
+
+.hover-cursor-point:hover {
+  cursor: pointer;
 }
 
 .min-width-100-px{
