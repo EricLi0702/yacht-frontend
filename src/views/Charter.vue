@@ -11,118 +11,143 @@
         <v-img :src="item.src"></v-img>
       </v-carousel-item>
     </v-carousel>
-    <v-container class="charter-filter-con">
-      <v-row>
-        <v-col>
-          <v-range-slider
-            v-model="priceRange"
-            :max="priceMax"
-            :min="priceMin"
-            color="#ffd400"
-            hide-details
-            class="align-center"
-          >
-            <template v-slot:prepend>
-              <v-text-field
-                :value="priceRange[0]"
-                class="mt-0 pt-0"
-                hide-details
-                color="#ffd400"
-                single-line
-                type="number"
-                style="width: 60px"
-                @change="$set(priceRange, 0, $event)"
-              ></v-text-field>
-            </template>
-            <template v-slot:append>
-              <v-text-field
-                :value="priceRange[1]"
-                class="mt-0 pt-0"
-                color="#ffd400"
-                hide-details
-                single-line
-                type="number"
-                style="width: 60px"
-                @change="$set(priceRange, 1, $event)"
-              ></v-text-field>
-            </template>
-          </v-range-slider>
-        </v-col>
-        <v-col>
-          <v-autocomplete
-            v-model="yachtLocation"
-            :items="locationArr"
-            color="#ffd400"
-            outlined
-            label="Where"
-            placeholder="Start typing to select location"
-            dense
-            prepend-inner-icon="mdi-map-marker"
-            hide-details
-            return-object
-            @change="changeLocation"
-          ></v-autocomplete>
-        </v-col>
-         <v-col>
-          <v-autocomplete
-            v-model="season"
-            :items="seasonArr"
-            color="#ffd400"
-            outlined
-            label="When"
-            placeholder="Start typing to select location"
-            dense
-            prepend-inner-icon="mdi-calendar-arrow-right"
-            hide-details
-            return-object
-            @change="changeLocation"
-          ></v-autocomplete>
-        </v-col>
-        <v-col>
-          <v-autocomplete
-            v-model="yachtType"
-            :items="yachtArr"
-            color="#ffd400"
-            outlined
-            label="Yacht Type"
-            placeholder="Start typing to select yacht"
-            dense
-            prepend-inner-icon="mdi-sail-boat"
-            hide-details
-            return-object
-            @change="changeYachtName"
-          ></v-autocomplete>
-        </v-col>
-        <v-col>
-          <v-select
-            :items="cabinArr"
-            label="Cabin"
-            dense
-            color="#ffd400"
-            outlined
-            hide-details
-            prepend-inner-icon="mdi-cabin-a-frame"
-            v-model="cabin"
-            :menu-props="{ top: false, offsetY: true }"
-          ></v-select>
-        </v-col>
-        <!-- <v-col>
-          <v-select
-            :items="guestArr"
-            label="Guest"
-            dense
-            color="#ffd400"
-            outlined
-            hide-details
-            prepend-inner-icon="mdi-account-multiple"
-            v-model="guest"
-            :menu-props="{ top: false, offsetY: true }"
-          ></v-select>
-        </v-col> -->
-        <v-btn icon color="#ffd400" @click="filterItemsFunc" class="my-auto">
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-      </v-row>
+    <v-container class="charter-filter-con d-flex align-end">
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-range-slider
+              v-model="priceRange"
+              :max="priceMax"
+              :min="priceMin"
+              color="#ffd400"
+              hide-details
+              class="align-center"
+            >
+              <template v-slot:prepend>
+                <v-text-field
+                  :value="priceRange[0]"
+                  class="mt-0 pt-0"
+                  hide-details
+                  color="#ffd400"
+                  single-line
+                  type="number"
+                  style="width: 60px"
+                  @change="$set(priceRange, 0, $event)"
+                ></v-text-field>
+              </template>
+              <template v-slot:append>
+                <v-text-field
+                  :value="priceRange[1]"
+                  class="mt-0 pt-0"
+                  color="#ffd400"
+                  hide-details
+                  single-line
+                  type="number"
+                  style="width: 60px"
+                  @change="$set(priceRange, 1, $event)"
+                ></v-text-field>
+              </template>
+            </v-range-slider>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-autocomplete
+              v-model="yachtLocation"
+              :items="locationArr"
+              color="#ffd400"
+              outlined
+              label="Where"
+              placeholder="Start typing to select location"
+              dense
+              prepend-inner-icon="mdi-map-marker"
+              hide-details
+              return-object
+              @change="changeLocation"
+            ></v-autocomplete>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="2">
+            <v-autocomplete
+              v-model="searchYear"
+              :items="yearArr"
+              color="#ffd400"
+              outlined
+              label="Year"
+              placeholder="Start typing to select Year"
+              dense
+              prepend-inner-icon="mdi-calendar-arrow-right"
+              hide-details
+              return-object
+              @change="changeYear"
+            ></v-autocomplete>
+          </v-col>
+          <v-col cols="12" md="2">
+            <v-autocomplete
+              v-model="searchMonth"
+              :items="monthArr"
+              color="#ffd400"
+              item-text="name"
+              item-value="value"
+              outlined
+              label="Month"
+              placeholder="Start typing to select Month"
+              dense
+              prepend-inner-icon="mdi-calendar-arrow-right"
+              hide-details
+              return-object
+              @change="changeMonth"
+            ></v-autocomplete>
+          </v-col>
+          <v-col cols="12" md="2">
+            <v-autocomplete
+              v-model="searchWeek"
+              :items="weekArr"
+              color="#ffd400"
+              outlined
+              item-text="name"
+              item-value="value"
+              label="Week"
+              placeholder="Start typing to select week"
+              dense
+              prepend-inner-icon="mdi-calendar-arrow-right"
+              hide-details
+              return-object
+              @change="changeWeek"
+            ></v-autocomplete>
+          </v-col>
+          <v-col cols="12" md="3">
+            <v-autocomplete
+              v-model="yachtType"
+              :items="yachtArr"
+              color="#ffd400"
+              outlined
+              label="Yacht Type"
+              placeholder="Start typing to select yacht"
+              dense
+              prepend-inner-icon="mdi-sail-boat"
+              hide-details
+              return-object
+              @change="changeYachtName"
+            ></v-autocomplete>
+          </v-col>
+          <v-col cols="12" md="3">
+            <v-select
+              :items="cabinArr"
+              label="Cabin"
+              dense
+              color="#ffd400"
+              outlined
+              hide-details
+              prepend-inner-icon="mdi-cabin-a-frame"
+              v-model="cabin"
+              :menu-props="{ top: false, offsetY: true }"
+            ></v-select>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-btn icon color="#ffd400" @click="filterItemsFunc" class="mb-3">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
     </v-container>
     <v-container>
       <v-row class="mb-1 ma-0">
@@ -216,7 +241,9 @@
                     :elevation="hover ? 3 : 0"
                     :class="{ 'on-hover': hover }"
                   >
-                    <v-img :src="require('../assets/image/home/' + yacht.images[0])">
+                    <v-img
+                      :src="require('../assets/image/home/' + yacht.images[0])"
+                    >
                       <template v-slot:placeholder>
                         <v-row
                           class="fill-height ma-0"
@@ -349,9 +376,25 @@
 </template>
 
 <script>
+import {
+  monthArr,
+  weekArr,
+  cabinArr,
+  guestArr,
+  yachtArr,
+  seasonArr,
+  locationArr,
+} from "../constants";
 export default {
   data() {
     return {
+      monthArr: monthArr,
+      weekArr: weekArr,
+      cabinArr: cabinArr,
+      guestArr: guestArr,
+      yachtArr: yachtArr,
+      seasonArr: seasonArr,
+      locationArr: locationArr,
       items: [
         {
           src: require("../assets/image/charter1.jpg"),
@@ -373,70 +416,14 @@ export default {
         },
       ],
       season: "",
-      yachtType:"",
+      yachtType: "",
       yachtLocation: "",
       cabin: "",
       priceMin: 1,
       priceMax: 100000000,
       priceRange: [1, 100000000],
-      cabinArr: ['4','5','6','7','8','9','10','11','12','12+'],
-      guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       guest: "",
-      yachtArr: [
-        "All",
-        "Motor",
-        "Sail"
-      ],
-      seasonArr:[
-        "Summer 2021",
-        "Winter 2021-2022",
-        "Summer 2022",
-        "Winter 2022-2023"
-      ],
-      locationArr: [
-        "The Mediterranean",
-        "Greece",
-        "France",
-        "Croatia",
-        "Italy",
-        "Malta",
-        "Montenegro",
-        "Spain",
-        "Turkey",
-        "Adriatic",
-        "Indian Ocean",
-        "Maldives",
-        "Seychelles",
-        "South Pacific",
-        "French Polynesia",
-        "Fiji",
-        "South East Asia",
-        "Thailand",
-        "Bali",
-        "Caribbean",
-        "Bahamas",
-        "Leeward Islands",
-        "Windward Islands",
-        "Greater Antilles",
-        "North America",
-        "Alaska",
-        "New England",
-        "Southeast Florida",
-        "Australasia",
-        "Australia",
-        "New Zealand",
-        "Northern Europe",
-        "Norway",
-        "Sweden",
-        "United Kingdom",
-        "The Baltic",
-        "Central America",
-        "Mexico",
-        "Costa Rica",
-        "Off the beaten track",
-        "Antarctica",
-        "Galapagos",
-      ],
+      yearArr: [],
       yachtList: [
         {
           name: "Speed Boat 10",
@@ -467,12 +454,19 @@ export default {
           built: "21-May-2020",
         },
       ],
+      searchYear: -1,
+      searchMonth: -1,
+      searchWeek: -1,
     };
   },
   async created() {
+    let currentYear = new Date().getFullYear();
+    for (let i = 0; i < 10; i++) {
+      this.yearArr.push(currentYear + i);
+    }
     await this.$store.dispatch("getAllShip");
     this.yachtList = this.$store.state.allShipData;
-    console.log("=====",this.yachtList)
+    console.log("=====", this.yachtList);
   },
   methods: {
     async filterItemsFunc() {
@@ -482,19 +476,28 @@ export default {
       payload.priceRange = this.priceRange;
       payload.cabin = this.cabin;
       payload.season = this.season;
+      payload.when = `${this.searchYear}-${this.searchMonth}-${this.searchWeek}`
       // payload.guest = this.guest;
-      console.log(payload);
+      console.log("+++++++++++++++++++", payload);
       await this.$store.dispatch("getCharter", payload);
-      console.log('------',this.$store.state.charterData)
-      this.yachtList = this.$store.state.charterData
+      console.log("------", this.$store.state.charterData);
+      this.yachtList = this.$store.state.charterData;
     },
 
     navToDetail(yacht) {
       console.log("yacht", yacht);
-      this.$router.push({ name: "charter-detail" ,params:{yacht:yacht}});
+      this.$router.push({ name: "charter-detail", params: { yacht: yacht } });
     },
     changeLocation() {},
     changeYachtName() {},
+    changeYear(){},
+    changeMonth(val){
+      this.searchMonth = val.value;
+    },
+    changeWeek(val){
+      this.searchWeek = val.value;
+    }
+    
   },
 };
 </script>
