@@ -24,7 +24,7 @@
         >
           <template v-slot:top>
             <v-toolbar flat >
-              <v-toolbar-title><strong>{{$t('admin').yachtList}}</strong></v-toolbar-title>
+              <v-toolbar-title><strong>My Yachts</strong></v-toolbar-title>
               <v-divider class="mx-4" inset vertical ></v-divider>
               <v-spacer></v-spacer>
               <v-dialog v-model="dialog" persistent max-width="500px" eager >
@@ -59,13 +59,13 @@
                       </v-row>
                       <v-row>
                         <v-col cols="12" >
-                          <v-text-field color="#50645A" v-model="editedItem.userName" :label="$t('profile').username + ' *'" ></v-text-field>
+                          <v-text-field color="#50645A" v-model="editedItem.userName" label="User Name *" ></v-text-field>
                         </v-col>
                         <v-col cols="12" >
-                          <v-text-field color="#50645A" v-model="editedItem.email" :label="$t('profile').email + ' *'" ></v-text-field>
+                          <v-text-field color="#50645A" v-model="editedItem.email" label="Email *" ></v-text-field>
                         </v-col>
                         <v-col cols="12" >
-                          <v-text-field color="#50645A" v-model="editedItem.phone" :label="$t('profile').phone"></v-text-field>
+                          <v-text-field color="#50645A" v-model="editedItem.phone" label="Phone"></v-text-field>
                         </v-col>
                       </v-row>
                     </v-container>
@@ -73,21 +73,21 @@
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="#50645A" text @click="close" >
-                      {{$t('common').close}}
+                      Close
                     </v-btn>
                     <v-btn color="#50645A" text :loading="isLoading" @click="save" >
-                      {{$t('common').save}}
+                      Save
                     </v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
               <v-dialog persistent v-model="dialogDelete" max-width="500px">
                 <v-card>
-                  <v-card-title class="headline">{{ $t('alert').areyousureDelete }}</v-card-title>
+                  <v-card-title class="headline">Are you sure want to remove?</v-card-title>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="#50645A" text @click="closeDelete">{{ $t('common').close }}</v-btn>
-                    <v-btn color="#50645A" text @click="deleteItemConfirm" :loading="isDeleting">{{ $t('common').ok }}</v-btn>
+                    <v-btn color="#50645A" text @click="closeDelete">Close</v-btn>
+                    <v-btn color="#50645A" text @click="deleteItemConfirm" :loading="isDeleting">Ok</v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -108,13 +108,13 @@
               <template v-slot:activator="{ on, attrs }">
                   <v-icon v-bind="attrs" v-on="on" small class="mr-2" @click="editItem(item)" > mdi-pencil </v-icon>
               </template>
-              <span>{{$t('common').edit}}</span>
+              <span>Edit</span>
             </v-tooltip>
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon v-bind="attrs" v-on="on" small @click="deleteItem(item)" > mdi-delete </v-icon>
               </template>
-              <span>{{$t('common').delete}}</span>
+              <span>Delete</span>
             </v-tooltip>
           </template>
           <template v-slot:[`item.id`]="{ item }">
@@ -137,7 +137,7 @@ export default {
   scrollToTop: false,
 
   metaInfo () {
-    return { title: this.$t('settings') }
+    return { title: 'Settings' }
   },
 
   data: () => ({
@@ -178,7 +178,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      user: 'auth/user'
+      user: "authData",
     }),
 
     formTitle () {
