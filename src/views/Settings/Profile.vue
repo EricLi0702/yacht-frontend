@@ -2,7 +2,7 @@
   <v-card :loading="isLoading" class="mx-auto" max-width="100%" tile>
     <template slot="progress">
       <v-progress-linear
-        color="#50645A"
+        color="#fc8600"
         height="10"
         indeterminate
       ></v-progress-linear>
@@ -10,17 +10,13 @@
 
     <v-img
       height="250"
-      :src="
-        user.bgImg == '/'
-          ? `${basicUrl}/asset/img/profile/commonBg.jpg`
-          : `${basicUrl}${user.bgImg}`
-      "
+      src="../../assets/image/charter1.jpg"
       class="position-relative overflow-visible img-pb-0"
     >
       <v-btn
         @click="clickUploadImageBtn1"
         fab
-        color="#50645a"
+        color="#fc8600"
         dark
         class="position-absolute"
         style="top: 30px; left: 30px"
@@ -43,7 +39,7 @@
           border-color: white;
           border-radius: 50%;
         "
-        color="#50645a"
+        color="#fc8600"
         size="180"
         @click="clickUploadImageBtn"
       >
@@ -67,28 +63,28 @@
 
     <v-card-text>
       <div class="my-4 text-subtitle-1">
-        <v-icon size="25" color="#50645A">mdi-email-outline</v-icon> •
+        <v-icon size="25" color="#fc8600">mdi-email-outline</v-icon> •
         {{ user.email }}
       </div>
-      <div class="my-4 text-subtitle-1">
-        <v-icon size="25" color="#50645A">mdi-phone-outline</v-icon> •
+      <!-- <div class="my-4 text-subtitle-1">
+        <v-icon size="25" color="#fc8600">mdi-phone-outline</v-icon> •
         {{
           user.phone == null ? "you have not set phone number yet" : user.phone
         }}
-      </div>
+      </div> -->
 
       <div>
-        Small plates, salads & sandwiches - an intimate setting with 12 indoor
-        seats plus patio seating.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        quod sequi rem tenetur explicabo vitae nemo dignissimos id expedita.
+        Repellendus sequi repudiandae, recusandae voluptas similique nam. Labore
+        quasi est laudantium?
       </div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-spacer />
-      <v-btn color="#50645A" text @click="openProfileDialog">
-        {{ $t("common").edit }}
-      </v-btn>
+      <v-btn color="#fc8600" text @click="openProfileDialog"> Edit </v-btn>
     </v-card-actions>
 
     <v-dialog v-model="profileDialog" persistent max-width="600px">
@@ -102,27 +98,27 @@
               <v-col cols="12">
                 <v-text-field
                   class="pt-0 mt-0"
-                  color="#50645A"
+                  color="#fc8600"
                   v-model="newUserName"
-                  :label="$t('profile').username + ' *'"
+                  label="User name *'"
                   hide-details
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
                   class="pt-0 mt-0"
-                  color="#50645A"
+                  color="#fc8600"
                   v-model="newEmail"
-                  :label="$t('profile').email + ' *'"
+                  label="Email *"
                   hide-details
                 ></v-text-field>
               </v-col>
               <!-- <v-col cols="12">
                 <v-text-field
                   class="pt-0 mt-0"
-                  color="#50645A"
+                  color="#fc8600"
                   v-model="newPhoneNumber"
-                  :label="$t('profile').phone"
+                  label="Phone"
                   hide-details
                 ></v-text-field>
               </v-col> -->
@@ -131,16 +127,14 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="#50645A" text @click="closeDialog">
-            {{ $t("common").close }}
-          </v-btn>
+          <v-btn color="#fc8600" text @click="closeDialog"> Close </v-btn>
           <v-btn
-            color="#50645A"
+            color="#fc8600"
             text
             @click="updateProfile"
             :loading="isLoading"
           >
-            {{ $t("common").save }}
+            Save
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -272,7 +266,8 @@ export default {
         userId: this.user.id,
         avatar: path,
       };
-      await this.$store.dispatch("updateUser", payload)
+      await this.$store
+        .dispatch("updateUser", payload)
         .then((res) => {
           console.log(res);
         })
@@ -288,7 +283,8 @@ export default {
         userId: this.user.id,
         bgImg: path,
       };
-      await this.$store.dispatch("updateUser", payload)
+      await this.$store
+        .dispatch("updateUser", payload)
         .then((res) => {
           console.log(res);
         })
@@ -330,7 +326,8 @@ export default {
         userEmail: this.newEmail,
         // userPhone: this.newPhoneNumber == '' ? null : this.newPhoneNumber
       };
-      await this.$store.dispatch("updateUser", payload)
+      await this.$store
+        .dispatch("updateUser", payload)
         .then((res) => {
           console.log(res);
           if (res.data.s == true) {
