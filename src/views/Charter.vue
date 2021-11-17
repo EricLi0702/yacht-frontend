@@ -1,17 +1,33 @@
 <template>
   <div>
     <!-- <v-img src="../assets/image/charter1.jpg"></v-img> -->
-    <v-carousel
-      height="700"
-      :show-arrows="false"
-      hide-delimiter-background
-      cycle
-    >
-      <v-carousel-item v-for="(item, i) in items" :key="i">
-        <v-img :src="item.src"></v-img>
-      </v-carousel-item>
-    </v-carousel>
-    <v-container class="charter-filter-con d-flex align-end">
+    <carousel
+            :nav="false"
+            :items="1"
+            :dots="false"
+            :margin="0"
+            :loop="false"
+            :autoplay="true"
+            :autoplaySpeed="1500"
+            :responsive="{
+              0: {
+                items: 1,
+              },
+              600: {
+                items: 1,
+              },
+              1000: {
+                items: 1,
+              },
+              1500: {
+                items: 1,
+              },
+            }"
+          >
+            <v-img v-for="(item, i) in items" :key="i" :src="item.src"></v-img>
+          </carousel>
+    
+    <v-container fluid class="charter-filter-con d-md-flex align-end elevation-5">
       <v-container>
         <v-row>
           <v-col cols="12" md="6">
@@ -145,11 +161,20 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-btn icon color="#ffd400" @click="filterItemsFunc" class="mb-3">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      <div class="px-md-0 px-3 pt-3">
+        <v-btn
+          :block="$vuetify.breakpoint.mdAndUp ? false : true"
+          class="text-capitalize mb-4"
+          elevation="0"
+          color="#ffd400"
+          @click="filterItemsFunc"
+        >
+          <v-icon left>mdi-magnify</v-icon>
+          Search
+        </v-btn>
+      </div>
     </v-container>
-    <v-container>
+    <v-container class="mt-16">
       <v-row class="mb-1 ma-0">
         <p
           class="text-h5 text-md-h3 font-weight-bold grey--text text--darken-3"
@@ -385,7 +410,11 @@ import {
   seasonArr,
   locationArr,
 } from "../constants";
+import carousel from "v-owl-carousel";
 export default {
+  components: {
+    carousel,
+  },
   data() {
     return {
       monthArr: monthArr,
@@ -476,7 +505,7 @@ export default {
       payload.priceRange = this.priceRange;
       payload.cabin = this.cabin;
       payload.season = this.season;
-      payload.when = `${this.searchYear}-${this.searchMonth}-${this.searchWeek}`
+      payload.when = `${this.searchYear}-${this.searchMonth}-${this.searchWeek}`;
       // payload.guest = this.guest;
       console.log("+++++++++++++++++++", payload);
       await this.$store.dispatch("getCharter", payload);
@@ -490,14 +519,13 @@ export default {
     },
     changeLocation() {},
     changeYachtName() {},
-    changeYear(){},
-    changeMonth(val){
+    changeYear() {},
+    changeMonth(val) {
       this.searchMonth = val.value;
     },
-    changeWeek(val){
+    changeWeek(val) {
       this.searchWeek = val.value;
-    }
-    
+    },
   },
 };
 </script>
