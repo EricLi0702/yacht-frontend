@@ -70,7 +70,7 @@
                             editedItem.userName == '' &&
                             editedItem.avatar == '/'
                           "
-                          :src="`${baseUrl}/asset/img/icon/anonymous_avatar.png`"
+                          :src="`${basicUrl}/asset/img/icon/anonymous_avatar.png`"
                           alt="UserAvatar"
                           style="width: 127px; height: 127px"
                         />
@@ -152,7 +152,7 @@
           <v-avatar size="60" color="#50645A" class="rounded-lg">
             <v-img
               v-if="item.avatar !== '/'"
-              :src="`${baseUrl}${item.avatar}`"
+              :src="`${basicUrl}${item.avatar}`"
               alt="yacht"
               class=""
             />
@@ -204,7 +204,9 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { basicUrl } from "../../config";
 import {
+  // eslint-disable-next-line no-unused-vars
   getYachtList,
   deleteYacht,
   createYacht,
@@ -229,7 +231,7 @@ export default {
     isImageSelecting: false,
     selectedImageFile: null,
     yachtList: [],
-    baseUrl: window.Laravel.base_url,
+    basicUrl: basicUrl,
     headers: [
       { text: "ID", value: "id", align: "start" },
       { text: "Name", value: "userName", sortable: true },
@@ -279,14 +281,17 @@ export default {
 
   async created() {
     this.isGetting = true;
-    await getYachtList()
-      .then((res) => {
-        console.log(res);
-        this.yachtList = res.data.d;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // await getYachtList()
+    //   .then((res) => {
+    //     console.log(res);
+    //     this.yachtList = res.data.d;
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    setTimeout(() => {
+        this.yachtList = []
+    }, 2000);
     this.isGetting = false;
   },
 
