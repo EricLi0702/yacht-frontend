@@ -315,8 +315,8 @@
                       <p class="text-h5 font-weight-bold text-left">
                         {{ yacht.name }}
                       </p>
-                      <div class="d-flex align-end">
-                        <v-icon color="white" class="pr-3"
+                      <div class="d-flex align-end pb-2">
+                        <v-icon color="white" class="pr-3 "
                           >mdi-sail-boat</v-icon
                         >
                         <p class="mb-0" style="width: 130px">Length</p>
@@ -326,7 +326,7 @@
                           {{ yacht.length }} Meter
                         </p>
                       </div>
-                      <div class="d-flex align-end py-3">
+                      <div class="d-flex align-end pb-2">
                         <v-icon color="white" class="pr-3">mdi-tag</v-icon>
                         <p class="mb-0" style="width: 130px">Price per Week</p>
                         <p
@@ -335,7 +335,7 @@
                           {{ yacht.price }}$
                         </p>
                       </div>
-                      <div class="d-flex align-end">
+                      <div class="d-flex align-end pb-2">
                         <v-icon color="white" class="pr-3"
                           >mdi-calendar-month</v-icon
                         >
@@ -346,7 +346,7 @@
                           {{ yacht.built }}
                         </p>
                       </div>
-                      <div class="d-flex align-end">
+                      <div class="d-flex align-end pb-2">
                         <v-icon color="white" class="pr-3"
                           >mdi-map-marker</v-icon
                         >
@@ -357,7 +357,7 @@
                           {{ yacht.region }}
                         </p>
                       </div>
-                      <div class="d-flex align-end">
+                      <div class="d-flex align-end pb-2">
                         <v-icon color="white" class="pr-3"
                           >mdi-cabin-a-frame</v-icon
                         >
@@ -368,7 +368,7 @@
                           {{ yacht.cabin }}
                         </p>
                       </div>
-                      <div class="d-flex align-end">
+                      <div class="d-flex align-end pb-2">
                         <v-icon color="white" class="pr-3"
                           >mdi-human-male-male</v-icon
                         >
