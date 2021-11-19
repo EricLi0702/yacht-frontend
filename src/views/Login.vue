@@ -102,8 +102,14 @@ export default {
       await this.$store.dispatch("signIn", {
         email: this.email,
         password: this.password,
+      })
+      .then((res) => {
+        console.log(res)
+        this.$router.push({name: 'home'})
+      }).catch((err) => {
+        console.log(err)  
       });
-      this.$router.push({name: 'home'})
+      
       this.isLoading = false;
     },
   },
