@@ -56,7 +56,9 @@
             >
               <p class="mb-0 text-caption grey--text text--darken-2">
                 Are you new here?
-                <a href="/register" class="text-decoration-none">Register here.</a>
+                <a href="/register" class="text-decoration-none"
+                  >Register here.</a
+                >
               </p>
             </div>
           </v-form>
@@ -68,7 +70,6 @@
             class="rounded-br-xl"
           ></v-img>
         </v-col>
-        
       </v-row>
     </v-card>
   </v-container>
@@ -99,17 +100,19 @@ export default {
         return this.$vToastify.error("please enter email or password");
       }
       this.isLoading = true;
-      await this.$store.dispatch("signIn", {
-        email: this.email,
-        password: this.password,
-      })
-      .then((res) => {
-        console.log(res)
-        this.$router.push({name: 'home'})
-      }).catch((err) => {
-        console.log(err)  
-      });
-      
+      await this.$store
+        .dispatch("signIn", {
+          email: this.email,
+          password: this.password,
+        })
+        .then((res) => {
+          console.log(res);
+          this.$router.push({ name: "home" });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
       this.isLoading = false;
     },
   },

@@ -196,9 +196,7 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
     name: "",
-    nameRules: [
-      (v) => !!v || "Name is required",
-    ],
+    nameRules: [(v) => !!v || "Name is required"],
     showPass: false,
     showConPass: false,
   }),
@@ -216,7 +214,6 @@ export default {
 
   methods: {
     async signUp() {
-      
       if (this.password != this.confirmPassword) {
         return this.$vToastify.error("confirm password does not match");
       }
@@ -224,12 +221,18 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
-        roles: this.userType == 'user'? ['user'] : ['owner'],
-      }
+        roles: this.userType == "user" ? ["user"] : ["owner"],
+      };
       console.log("signup", payload);
-      await this.$store.dispatch("signUp", payload)
-      this.$router.push({name: 'login'})
-      
+      await this.$store
+        .dispatch("signUp", payload)
+        .then((res) => {
+          console.log(res);
+          this.$router.push({ name: "login" });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
